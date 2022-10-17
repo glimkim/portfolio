@@ -1,5 +1,10 @@
 import { Theme } from '@emotion/react';
 
+export type PageTheme = 'basic' | 'dark';
+
 export const theme: Theme = {
-  keyColor: '#EBFFEB',
+  colors: {
+    keyColor: '#D1FFD1',
+    dark100: '#333333',
+  },
 };

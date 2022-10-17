@@ -40,9 +40,14 @@ export const resetCss = css`
   }
 
   input,
-  button,
   textarea,
   select {
     font: inherit;
+  }
+
+  button {
+    font: inherit;
+    border: none;
+    background-color: transparent;
   }
 `;

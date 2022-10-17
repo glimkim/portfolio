@@ -1,8 +1,12 @@
 import { css } from '@emotion/react';
+import { resetCss } from './reset';
 
 export const pageWidth = '1440px';
+export const HeaderHeight = '60px';
+export const HeaderLeftWidth = '80px';
 
 export const globalStyles = css`
+  ${resetCss};
   @font-face {
     font-family: 'BlackHanSans';
     font-style: normal;

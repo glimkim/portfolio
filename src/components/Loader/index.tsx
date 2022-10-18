@@ -34,15 +34,17 @@ const LoadingContainer = styled.div`
       display: block;
       font-size: 4rem;
       animation-name: Letter;
-      animation-duration: 3s;
+      animation-duration: 2.8s;
       animation-iteration-count: infinite;
       animation-timing-function: ease-in-out;
+
       ${() => {
         let styles = '';
         for (let i = 1; i <= 6; i += 1) {
-          styles += `&:nth-type(${i}){
-                animation-delay: ${i * 200}ms;
-            }`;
+          styles += `&:nth-of-type(${i}){
+                animation-delay: ${i * 100}ms;
+            }
+            `;
         }
         return css`
           ${styles}

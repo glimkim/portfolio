@@ -3,7 +3,8 @@ import { resetCss } from './reset';
 
 export const pageWidth = '1440px';
 export const HeaderHeight = '60px';
-export const HeaderLeftWidth = '80px';
+export const DrawerWidthClosed = '80px';
+export const DrawerWidthOpen = '240px';
 
 export const globalStyles = css`
   ${resetCss};

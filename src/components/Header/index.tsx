@@ -1,7 +1,12 @@
 import styled from '@emotion/styled';
 import Logo from 'components/Logo';
-import React, { useCallback, useContext, useEffect } from 'react';
-import { HeaderHeight, HeaderLeftWidth, pageWidth } from 'styles/global';
+import React, { useCallback, useContext } from 'react';
+import {
+  HeaderHeight,
+  DrawerWidthClosed,
+  pageWidth,
+  DrawerWidthOpen,
+} from 'styles/global';
 import { ReactComponent as Arrow } from 'assets/icons/arrow_icon.svg';
 import { HeaderStateContext, HeaderStateDispatch } from 'context/header';
 
@@ -13,18 +18,18 @@ function Header() {
     if (dispatch) dispatch({ type: 'toggle' });
   }, [dispatch]);
 
-  useEffect(() => {
-    console.log(headerState);
-  }, [headerState]);
-
   return (
-    <StyledHeader>
+    <StyledHeader drawerState={headerState}>
       <div className="headerTop">
         <Logo />
         <div className="line" />
       </div>
       <div className="headerLeft">
-        <button type="button" onClick={onToggleDrawer}>
+        <button
+          className={headerState ? 'toggleBtn active' : 'toggleBtn'}
+          type="button"
+          onClick={onToggleDrawer}
+        >
           <Arrow />
         </button>
       </div>
@@ -32,12 +37,13 @@ function Header() {
   );
 }
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.header<{ drawerState: boolean }>`
   position: fixed;
   top: 0;
   left: 50%;
   right: 0;
   bottom: 0;
+  z-index: 1000;
   transform: translateX(-50%);
   width: ${pageWidth};
   max-width: 100%;
@@ -52,10 +58,11 @@ const StyledHeader = styled.header`
     justify-content: center;
     align-items: center;
     border-left: 1px solid ${({ theme: { colors } }) => colors.dark100};
+    background-color: ${({ theme: { colors } }) => colors.keyColor};
     div.line {
       position: fixed;
       top: ${HeaderHeight};
-      left: ${HeaderLeftWidth};
+      left: ${DrawerWidthClosed};
       width: calc(1440px + (100vw - 1440px) / 2);
       height: 1px;
       background-color: ${({ theme: { colors } }) => colors.dark100};
@@ -65,9 +72,26 @@ const StyledHeader = styled.header`
     position: absolute;
     top: ${HeaderHeight};
     left: 0;
-    width: ${HeaderLeftWidth};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: ${({ drawerState }) =>
+      drawerState ? DrawerWidthOpen : DrawerWidthClosed};
+    transition: 0.4s;
+    transition-timing-function: ease-in-out;
     height: 100vh;
     border: 1px solid ${({ theme: { colors } }) => colors.dark100};
+    background-color: ${({ theme: { colors } }) => colors.keyColor};
+    button.toggleBtn {
+      align-self: flex-end;
+      width: ${DrawerWidthClosed};
+      height: ${DrawerWidthClosed};
+      transition: 0.6s;
+      transition-timing-function: ease-in-out;
+      &.active {
+        transform: rotateY(180deg);
+      }
+    }
   }
 `;
 

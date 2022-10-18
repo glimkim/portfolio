@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from 'react';
 import Header from 'components/Header';
 import { PageTheme } from 'styles/theme';
 import styled from '@emotion/styled';
-import { HeaderHeight, HeaderLeftWidth, pageWidth } from 'styles/global';
+import { HeaderHeight, DrawerWidthClosed, pageWidth } from 'styles/global';
 
 interface PageTemplate extends HTMLAttributes<HTMLDivElement> {
   theme?: PageTheme;
@@ -28,7 +28,7 @@ const PageContainer = styled.div<{ pageTheme: PageTheme }>`
     max-width: 100%;
     margin: 0 auto;
     padding-top: ${HeaderHeight};
-    padding-left: ${HeaderLeftWidth};
+    padding-left: ${DrawerWidthClosed};
   }
 `;
 

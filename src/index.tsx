@@ -1,3 +1,4 @@
+import PageThemeProvider from 'context/pageTheme';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
@@ -8,7 +9,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <PageThemeProvider>
+      <App />
+    </PageThemeProvider>
   </React.StrictMode>,
 );
 

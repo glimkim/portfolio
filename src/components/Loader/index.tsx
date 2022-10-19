@@ -26,13 +26,14 @@ const LoadingContainer = styled.div`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: ${({ theme: { colors } }) => `${colors.keyColor}`};
+  background-color: ${({ theme: { colors } }) => colors.keyColor};
   ul {
     display: flex;
     width: fit-content;
     li.letter {
       display: block;
       font-size: 4rem;
+      font-family: 'BlackHanSans';
       animation-name: Letter;
       animation-duration: 2.8s;
       animation-iteration-count: infinite;

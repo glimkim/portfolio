@@ -49,5 +49,6 @@ export const resetCss = css`
     font: inherit;
     border: none;
     background-color: transparent;
+    cursor: pointer;
   }
 `;

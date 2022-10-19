@@ -53,7 +53,9 @@
       {
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "no-unused-expressions": "off"
   },
   "settings": {
     "import/resolver": {

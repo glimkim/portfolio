@@ -1,16 +1,17 @@
+import React, { useCallback, useContext } from 'react';
 import styled from '@emotion/styled';
 import Logo from 'components/Logo';
-import React, { useCallback, useContext } from 'react';
 import {
   headerHeight,
   drawerWidthClosed,
   pageWidth,
   drawerWidthOpen,
 } from 'styles/global';
-import { ReactComponent as Arrow } from 'assets/icons/arrow_icon.svg';
 import { HeaderStateContext, HeaderStateDispatch } from 'context/header';
 import { PageTheme, PageThemeContext } from 'context/pageTheme';
+import SVG from 'components/SVG';
 import ThemeSwitch from './ThemeSwitch';
+import IconLinkBox from './IconLinkBox';
 
 function Header() {
   const dispatch = useContext(HeaderStateDispatch);
@@ -36,8 +37,9 @@ function Header() {
           type="button"
           onClick={onToggleDrawer}
         >
-          <Arrow />
+          <SVG icon="Arrow" />
         </button>
+        <IconLinkBox drawerState={headerState} />
       </div>
     </StyledHeader>
   );
@@ -60,6 +62,7 @@ const StyledHeader = styled.header<{
 
   div.headerTop {
     position: relative;
+    z-index: 1000;
     width: 100%;
     max-width: 100%;
     height: ${headerHeight};
@@ -80,10 +83,15 @@ const StyledHeader = styled.header<{
     div.line {
       position: fixed;
       top: ${headerHeight};
-      left: ${drawerWidthClosed};
-      width: calc(1440px + (100vw - 1440px) / 2);
+      left: ${({ drawerState }) =>
+        drawerState ? drawerWidthOpen : drawerWidthClosed};
+      width: ${({ drawerState }) =>
+        drawerState
+          ? `calc(${pageWidth} - ${drawerWidthOpen} + (100vw - ${pageWidth}) / 2)`
+          : `calc(${pageWidth} - ${drawerWidthClosed} + (100vw - ${pageWidth}) / 2)`};
       height: 1px;
       background-color: ${({ theme: { colors } }) => colors.border};
+      transition: ${({ drawerState }) => (drawerState ? '0.8s' : '0.3s')};
     }
   }
   div.headerLeft {
@@ -93,12 +101,14 @@ const StyledHeader = styled.header<{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     width: ${({ drawerState }) =>
       drawerState ? drawerWidthOpen : drawerWidthClosed};
     transition: width 0.4s;
     transition-timing-function: ease-in-out;
-    height: 100vh;
+    height: calc(100vh - ${headerHeight});
     border: 1px solid ${({ theme: { colors } }) => colors.border};
+    border-bottom: none;
     background-color: ${({ theme: { colors } }) => colors.keyColor};
     button.toggleBtn {
       align-self: flex-end;
@@ -109,6 +119,9 @@ const StyledHeader = styled.header<{
       &.active {
         transform: rotateY(180deg);
       }
+    }
+    ul {
+      justify-self: flex-end;
     }
   }
 `;

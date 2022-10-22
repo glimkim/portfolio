@@ -12,6 +12,7 @@ import { PageTheme, PageThemeContext } from 'context/pageTheme';
 import SVG from 'components/SVG';
 import ThemeSwitch from './ThemeSwitch';
 import IconLinkBox from './IconLinkBox';
+import NavigationList from './NavigationList';
 
 function Header() {
   const dispatch = useContext(HeaderStateDispatch);
@@ -39,6 +40,7 @@ function Header() {
         >
           <SVG icon="Arrow" />
         </button>
+        <NavigationList />
         <IconLinkBox drawerState={headerState} />
       </div>
     </StyledHeader>
@@ -122,6 +124,12 @@ const StyledHeader = styled.header<{
     }
     ul {
       justify-self: flex-end;
+    }
+  }
+
+  @media screen and (max-width: 1080px) {
+    div.headerTop {
+      padding: 0 1rem;
     }
   }
 `;

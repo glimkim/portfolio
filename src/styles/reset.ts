@@ -51,4 +51,8 @@ export const resetCss = css`
     background-color: transparent;
     cursor: pointer;
   }
+
+  a {
+    text-decoration: none;
+  }
 `;

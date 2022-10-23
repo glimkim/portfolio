@@ -3,7 +3,7 @@ import * as icons from 'assets/icons';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-type IconType = keyof typeof icons;
+export type IconType = keyof typeof icons;
 
 interface SVGProps extends HTMLAttributes<SVGSVGElement> {
   icon: IconType;

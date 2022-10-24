@@ -1,6 +1,6 @@
 import React, { useCallback, useContext } from 'react';
 import styled from '@emotion/styled';
-import Logo from 'components/Logo';
+import Logo from 'components/common/Logo';
 import {
   headerHeight,
   drawerWidthClosed,
@@ -8,38 +8,44 @@ import {
   drawerWidthOpen,
 } from 'styles/global';
 import { HeaderStateContext, HeaderStateDispatch } from 'context/header';
-import { PageTheme, PageThemeContext } from 'context/pageTheme';
-import SVG from 'components/SVG';
-import ThemeSwitch from './ThemeSwitch';
+import {
+  PageTheme,
+  PageThemeContext,
+  PageThemeDispatch,
+} from 'context/pageTheme';
+import IconBtn from 'components/common/IconButton';
 import IconLinkBox from './IconLinkBox';
 import NavigationList from './NavigationList';
 
 function Header() {
-  const dispatch = useContext(HeaderStateDispatch);
+  const headerStateDispatch = useContext(HeaderStateDispatch);
   const headerState = useContext(HeaderStateContext);
   const pageTheme = useContext(PageThemeContext);
+  const pageThemeDispatch = useContext(PageThemeDispatch);
+
+  const onToggleMode = useCallback(() => {
+    pageThemeDispatch && pageThemeDispatch({ type: 'toggle' });
+  }, [headerStateDispatch]);
 
   const onToggleDrawer = useCallback(() => {
-    if (dispatch) dispatch({ type: 'toggle' });
-  }, [dispatch]);
+    if (headerStateDispatch) headerStateDispatch({ type: 'toggle' });
+  }, [headerStateDispatch]);
 
   return (
     <StyledHeader drawerState={headerState} pageTheme={pageTheme}>
       <div className="headerTop">
         <div>
           <Logo />
-          <ThemeSwitch className="switch" />
+          <IconBtn icon="Mode" onClick={onToggleMode} className="switch" />
         </div>
         <div className="line" />
       </div>
       <div className="headerLeft">
-        <button
+        <IconBtn
           className={headerState ? 'toggleBtn active' : 'toggleBtn'}
-          type="button"
           onClick={onToggleDrawer}
-        >
-          <SVG icon="Arrow" />
-        </button>
+          icon="Arrow"
+        />
         <NavigationList />
         <IconLinkBox drawerState={headerState} />
       </div>
@@ -52,20 +58,19 @@ const StyledHeader = styled.header<{
   pageTheme: PageTheme;
 }>`
   position: fixed;
-  top: 0;
-  left: 50%;
-  right: 0;
-  bottom: 0;
   z-index: 1000;
-  transform: translateX(-50%);
   width: ${pageWidth};
   max-width: 100%;
-  height: 100vh;
-
+  margin: 0 auto;
   div.headerTop {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    transform: translateX(-50%);
     z-index: 1000;
-    width: 100%;
+    width: ${pageWidth};
     max-width: 100%;
     height: ${headerHeight};
     border-left: 1px solid ${({ theme: { colors } }) => colors.border};
@@ -80,6 +85,15 @@ const StyledHeader = styled.header<{
       button.switch {
         position: absolute;
         right: 0;
+        height: 2rem;
+        border-radius: 100%;
+        padding-left: 1.43rem;
+        figure {
+          height: 100%;
+          svg {
+            height: 100%;
+          }
+        }
       }
     }
     div.line {
@@ -100,24 +114,28 @@ const StyledHeader = styled.header<{
     position: absolute;
     top: ${headerHeight};
     left: 0;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     width: ${({ drawerState }) =>
       drawerState ? drawerWidthOpen : drawerWidthClosed};
-    transition: width 0.4s;
-    transition-timing-function: ease-in-out;
     height: calc(100vh - ${headerHeight});
     border: 1px solid ${({ theme: { colors } }) => colors.border};
     border-bottom: none;
     background-color: ${({ theme: { colors } }) => colors.keyColor};
+    transition: width 0.4s;
+    transition-timing-function: ease-in-out;
     button.toggleBtn {
       align-self: flex-end;
       width: ${drawerWidthClosed};
       height: ${drawerWidthClosed};
       transition: 0.6s;
       transition-timing-function: ease-in-out;
+      &:hover {
+        transition: 0.3s;
+      }
       &.active {
         transform: rotateY(180deg);
       }
@@ -127,7 +145,7 @@ const StyledHeader = styled.header<{
     }
   }
 
-  @media screen and (max-width: 1080px) {
+  @media screen and (max-width: 1440px) {
     div.headerTop {
       padding: 0 1rem;
     }

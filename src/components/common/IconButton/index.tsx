@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import SVG, { IconType } from 'components/SVG';
+import SVG, { IconType } from 'components/common/SVG';
 import React, { HTMLAttributes } from 'react';
 
 interface IconBtnProps extends HTMLAttributes<HTMLButtonElement> {

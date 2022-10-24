@@ -33,13 +33,38 @@ const NaviList = styled.ul`
     width: 100%;
     height: 3rem;
     a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
       font-weight: bold;
       opacity: 0;
+      transform: scale(1, 1);
+      &::after {
+        position: absolute;
+        bottom: 5px;
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background-color: #333;
+        transition: 0.3s;
+      }
       &.enter-done {
         opacity: 1;
         transition: 0.6s;
       }
       &.exit-done {
+      }
+      &:hover {
+        transition: 0.3s;
+        transform: scale(1.1, 1.1);
+        &::after {
+          width: 100%;
+          bottom: 10px;
+        }
       }
     }
   }

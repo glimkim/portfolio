@@ -15,9 +15,10 @@ const theme: { [key in PageTheme]: Colors } = {
       shadow: '#333333',
       font: '#333333',
     },
+    footer: '#CFFFCF',
   },
   dark: {
-    keyColor: '#333333',
+    keyColor: '#0F0F0F',
     pointColor: '#C8E3C8',
     title: '#CCCCCC',
     font: '#EDEDED',
@@ -29,6 +30,7 @@ const theme: { [key in PageTheme]: Colors } = {
       shadow: '#CCCCCC',
       font: '#333333',
     },
+    footer: '#333333',
   },
 };
 

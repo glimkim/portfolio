@@ -15,6 +15,7 @@ declare module '@emotion/react' {
       shadow: string;
       font: string;
     };
+    footer: string;
   }
   export interface Theme {
     colors: Colors;

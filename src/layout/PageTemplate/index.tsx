@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from 'react';
-import Header from 'components/Header';
+import Header from 'components/common/Header';
 import styled from '@emotion/styled';
 import { headerHeight, drawerWidthClosed, pageWidth } from 'styles/global';
 
@@ -20,7 +20,8 @@ const PageContainer = styled.div`
   width: 100%;
   min-height: 100vh;
   background-color: ${({ theme: { colors } }) => colors.keyColor};
-  div.contents {
+  overflow: hidden;
+  > div.contents {
     width: ${pageWidth};
     max-width: 100%;
     margin: 0 auto;

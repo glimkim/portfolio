@@ -8,6 +8,7 @@ export const resetCss = css`
     font-size: 100%;
     vertical-align: baseline;
     box-sizing: border-box;
+    line-height: initial;
   }
 
   article,

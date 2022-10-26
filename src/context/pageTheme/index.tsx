@@ -2,7 +2,8 @@ import React, { createContext, Dispatch, useReducer } from 'react';
 
 export type PageTheme = 'dark' | 'default';
 interface PageThemeAction {
-  type: 'toggle';
+  type: 'toggle' | 'set';
+  newTheme?: PageTheme;
 }
 
 export const PageThemeContext = createContext<PageTheme>('default');
@@ -18,6 +19,8 @@ function PageThemeProvider({ children }: PageThemeProviderProps) {
     switch (action.type) {
       case 'toggle':
         return state === 'default' ? 'dark' : 'default';
+      case 'set':
+        return action.newTheme!;
       default:
         return state;
     }

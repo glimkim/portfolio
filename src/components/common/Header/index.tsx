@@ -25,7 +25,8 @@ function Header() {
 
   const onToggleMode = useCallback(() => {
     pageThemeDispatch && pageThemeDispatch({ type: 'toggle' });
-  }, [headerStateDispatch]);
+    localStorage.setItem('mode', pageTheme === 'default' ? 'dark' : 'default');
+  }, [headerStateDispatch, pageTheme]);
 
   const onToggleDrawer = useCallback(() => {
     if (headerStateDispatch) headerStateDispatch({ type: 'toggle' });
@@ -57,25 +58,21 @@ const StyledHeader = styled.header<{
   drawerState: boolean;
   pageTheme: PageTheme;
 }>`
-  position: fixed;
+  position: sticky;
+  top: 0;
   z-index: 1000;
   width: ${pageWidth};
   max-width: 100%;
   margin: 0 auto;
   div.headerTop {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 50%;
-    right: 0;
-    bottom: 0;
-    transform: translateX(-50%);
     z-index: 1000;
-    width: ${pageWidth};
-    max-width: 100%;
     height: ${headerHeight};
     border-left: 1px solid ${({ theme: { colors } }) => colors.border};
     background-color: ${({ theme: { colors } }) => colors.keyColor};
-    div {
+    transition: background-color 0.3s;
+    > div {
       position: relative;
       display: flex;
       justify-content: center;
@@ -103,8 +100,8 @@ const StyledHeader = styled.header<{
         drawerState ? drawerWidthOpen : drawerWidthClosed};
       width: ${({ drawerState }) =>
         drawerState
-          ? `calc(${pageWidth} - ${drawerWidthOpen} + (100vw - ${pageWidth}) / 2)`
-          : `calc(${pageWidth} - ${drawerWidthClosed} + (100vw - ${pageWidth}) / 2)`};
+          ? `calc(${pageWidth} - ${drawerWidthOpen} + ((100vw - ${pageWidth}) / 2))`
+          : `calc(${pageWidth} - ${drawerWidthClosed} + ((100vw - ${pageWidth}) / 2))`};
       height: 1px;
       background-color: ${({ theme: { colors } }) => colors.border};
       transition: ${({ drawerState }) => (drawerState ? '0.8s' : '0.3s')};
@@ -144,10 +141,37 @@ const StyledHeader = styled.header<{
       justify-self: flex-end;
     }
   }
-
   @media screen and (max-width: 1440px) {
     div.headerTop {
       padding: 0 1rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    div.headerTop {
+      left: 50%;
+      right: 0;
+      transform: translateX(-50%);
+      width: ${pageWidth};
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    div.headerTop {
+      left: 0;
+      width: 100%;
+      padding: 0 1rem;
+      box-sizing: border-box;
+      border-bottom: 1px solid ${({ theme: { colors } }) => colors.border};
+      div.line {
+        display: none;
+      }
+    }
+
+    div.headerLeft {
+      display: none;
     }
   }
 `;

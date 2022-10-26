@@ -6,7 +6,8 @@ import Bn03 from 'assets/images/item_bn_03.png';
 import Bn04 from 'assets/images/item_bn_04.png';
 import Bn05 from 'assets/images/item_bn_05.png';
 import Bn06 from 'assets/images/item_bn_02.png';
-import Bn07 from 'assets/images/item_bn_07.png';
+import Bn07 from 'assets/images/item_bn_08.png';
+import Bn08 from 'assets/images/item_bn_08.png';
 import WorkItem from './WorkItem';
 
 export interface ItemInfo {
@@ -30,13 +31,22 @@ const workList: ItemInfo[] = [
     img: Bn01,
   },
   {
+    title: 'Toons Components',
+    date: '01. 06. 2022 - 24. 09. 2022',
+    link: 'https://toons.jinwoo.space/',
+    gitLink: 'https://github.com/glimkim/portfolio',
+    description:
+      'Mauris efficitur sit amet augue a blandit. Aenean molestie odio id nisi semper sollicitudin in sit amet felis. Cras sed nisi sapien. Quisque rhoncus accumsan ultricies. Nullam sit amet turpis in enim faucibus congue. Aenean efficitur gravida dui, sit amet porttitor tellus sagittis et massa, in blandit elit.',
+    img: Bn02,
+  },
+  {
     title: 'StepPay',
     date: '21. 06. 2021 - 30. 06. 2022',
     link: 'https://www.steppay.kr/',
     gitLink: '',
     description:
       '<b>Payment Solution Software Service</b> Mauris efficitur sit amet augue a blandit. Aenean molestie odio id nisi semper sollicitudin in sit amet felis. Cras sed nisi sapien. Quisque rhoncus accumsan ultricies. Nullam sit amet turpis in enim faucibus congue. Aenean efficitur gravida dui, sit amet porttitor tellus sagittis et massa, in blandit elit.',
-    img: Bn02,
+    img: Bn03,
   },
   {
     title: 'Lmitter',
@@ -45,7 +55,7 @@ const workList: ItemInfo[] = [
     gitLink: '',
     description:
       ' - Social Media SPA Mauris efficitur sit amet augue a blandit. Aenean molestie odio id nisi semper sollicitudin in sit amet felis. Cras sed nisi sapien. Quisque rhoncus accumsan ultricies. Nullam sit amet turpis in enim faucibus congue. Aenean efficitur gravida dui, sit amet porttitor tellus sagittis et massa, in blandit elit.',
-    img: Bn03,
+    img: Bn04,
   },
   {
     title: 'LimChat',
@@ -54,7 +64,7 @@ const workList: ItemInfo[] = [
     gitLink: '',
     description:
       ' - Real Time Open Talk Mauris efficitur sit amet augue a blandit. Aenean molestie odio id nisi semper sollicitudin in sit amet felis. Cras sed nisi sapien. Quisque rhoncus accumsan ultricies. Nullam sit amet turpis in enim faucibus congue. Aenean efficitur gravida dui, sit amet porttitor tellus sagittis et massa, in blandit elit.',
-    img: Bn04,
+    img: Bn05,
   },
   {
     title: 'ASTELL & KERN',
@@ -63,7 +73,7 @@ const workList: ItemInfo[] = [
     gitLink: '',
     description:
       '- Rebranding Website Mauris efficitur sit amet augue a blandit. Aenean molestie odio id nisi semper sollicitudin in sit amet felis. Cras sed nisi sapien. Quisque rhoncus accumsan ultricies. Nullam sit amet turpis in enim faucibus congue. Aenean efficitur gravida dui, sit amet porttitor tellus sagittis et massa, in blandit elit.',
-    img: Bn05,
+    img: Bn06,
   },
   {
     title: 'BookAnd',
@@ -72,7 +82,7 @@ const workList: ItemInfo[] = [
     gitLink: '',
     description:
       'Mauris efficitur sit amet augue a blandit. Aenean molestie odio id nisi semper sollicitudin in sit amet felis. Cras sed nisi sapien. Quisque rhoncus accumsan ultricies. Nullam sit amet turpis in enim faucibus congue. Aenean efficitur gravida dui, sit amet porttitor tellus sagittis et massa, in blandit elit.',
-    img: Bn06,
+    img: Bn07,
   },
   {
     title: 'Baekmidang',
@@ -81,7 +91,7 @@ const workList: ItemInfo[] = [
     gitLink: '',
     description:
       'Mauris efficitur sit amet augue a blandit. Aenean molestie odio id nisi semper sollicitudin in sit amet felis. Cras sed nisi sapien. Quisque rhoncus accumsan ultricies. Nullam sit amet turpis in enim faucibus congue. Aenean efficitur gravida dui, sit amet porttitor tellus sagittis et massa, in blandit elit.',
-    img: Bn07,
+    img: Bn08,
   },
 ];
 
@@ -95,6 +105,8 @@ function WorkList() {
   );
 }
 
-const List = styled.ul``;
+const List = styled.ul`
+  margin-bottom: 5rem;
+`;
 
 export default WorkList;

@@ -68,6 +68,9 @@ const PageContainer = styled.div`
 
   @media screen and (max-width: 1440px) {
     border: none;
+    & > div.sections {
+      padding-right: 1rem;
+    }
   }
   @media screen and (max-width: 1080px) {
     & > div.sections {

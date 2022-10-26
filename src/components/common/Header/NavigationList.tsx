@@ -1,26 +1,56 @@
-import React, { useContext } from 'react';
+import React, { useCallback, useContext, useRef } from 'react';
 import styled from '@emotion/styled';
-import { HeaderStateContext } from 'context/header';
+import { HeaderStateContext, HeaderStateDispatch } from 'context/header';
 import { CSSTransition } from 'react-transition-group';
 
 function NavigationList() {
   const drawerState = useContext(HeaderStateContext);
+  const drawerDispatch = useContext(HeaderStateDispatch);
+
+  const onClickMenu = useCallback(() => {
+    drawerDispatch && drawerDispatch({ type: 'toggle' });
+  }, [drawerDispatch]);
+
+  const anchor01 = useRef(null);
+  const anchor02 = useRef(null);
+  const anchor03 = useRef(null);
 
   return (
     <NaviList>
       <li>
-        <CSSTransition in={drawerState} timeout={300} unmountOnExit>
-          <a href="#aboutMe">ABOUT ME</a>
+        <CSSTransition
+          in={drawerState}
+          timeout={300}
+          unmountOnExit
+          nodeRef={anchor01}
+        >
+          <a href="#aboutMe" onClick={onClickMenu} ref={anchor01}>
+            ABOUT ME
+          </a>
         </CSSTransition>
       </li>
       <li>
-        <CSSTransition in={drawerState} timeout={300} unmountOnExit>
-          <a href="#aboutMe">WORKS</a>
+        <CSSTransition
+          in={drawerState}
+          timeout={300}
+          unmountOnExit
+          nodeRef={anchor02}
+        >
+          <a href="#works" onClick={onClickMenu} ref={anchor02}>
+            WORKS
+          </a>
         </CSSTransition>
       </li>
       <li>
-        <CSSTransition in={drawerState} timeout={300} unmountOnExit>
-          <a href="#aboutMe">CONTACT</a>
+        <CSSTransition
+          in={drawerState}
+          timeout={300}
+          unmountOnExit
+          nodeRef={anchor03}
+        >
+          <a href="#contact" onClick={onClickMenu} ref={anchor03}>
+            CONTACT
+          </a>
         </CSSTransition>
       </li>
     </NaviList>

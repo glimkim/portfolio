@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, useRef } from 'react';
 import styled from '@emotion/styled';
 import SVG from 'components/common/SVG';
 import { CSSTransition } from 'react-transition-group';
@@ -8,35 +8,59 @@ interface IconLinkBoxProps extends HTMLAttributes<HTMLUListElement> {
 }
 
 function IconLinkBox({ drawerState, ...props }: IconLinkBoxProps) {
-  const iconList = [
-    {
-      name: 'GitHub',
-      link: 'https://github.com/glimkim',
-      icon: <SVG icon="GitHub" />,
-    },
-    {
-      name: 'LinkedIn',
-      link: 'https://github.com/glimkim',
-      icon: <SVG icon="LinkedIn" />,
-    },
-    {
-      name: 'Notion',
-      link: 'https://github.com/glimkim',
-      icon: <SVG icon="Notion" />,
-    },
-  ];
+  const span01 = useRef(null);
+  const span02 = useRef(null);
+  const span03 = useRef(null);
+
   return (
     <IconList drawerState={drawerState} {...props}>
-      {iconList.map((_icon) => (
-        <li key={_icon.name}>
-          <a href={_icon.link}>
-            {_icon.icon}{' '}
-            <CSSTransition in={drawerState} timeout={300} unmountOnExit>
-              <span>{_icon.name}</span>
-            </CSSTransition>
-          </a>
-        </li>
-      ))}
+      <li>
+        <a href="https://github.com/glimkim" target="_blank" rel="noreferrer">
+          <SVG icon="GitHub" />{' '}
+          <CSSTransition
+            in={drawerState}
+            timeout={300}
+            unmountOnExit
+            nodeRef={span01}
+          >
+            <span ref={span01}>GitHub</span>
+          </CSSTransition>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/lim-kim-dev"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <SVG icon="LinkedIn" />{' '}
+          <CSSTransition
+            in={drawerState}
+            timeout={300}
+            unmountOnExit
+            nodeRef={span02}
+          >
+            <span ref={span02}>LinkedIn</span>
+          </CSSTransition>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://limdev.notion.site/Dev-bc42e136f9b241a19fbc4210cf0a2073"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <SVG icon="Notion" />{' '}
+          <CSSTransition
+            in={drawerState}
+            timeout={300}
+            unmountOnExit
+            nodeRef={span03}
+          >
+            <span ref={span03}>Notion</span>
+          </CSSTransition>
+        </a>
+      </li>
     </IconList>
   );
 }
@@ -48,6 +72,7 @@ const IconList = styled.ul<{ drawerState: boolean }>`
   width: 100%;
   border-top: 1px solid ${({ theme: { colors } }) => colors.border};
   padding: 1rem 0;
+
   li {
     width: 100%;
     a {

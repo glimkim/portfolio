@@ -33,6 +33,7 @@ const PageContainer = styled.div`
   width: 100%;
   min-height: 100vh;
   background-color: ${({ theme: { colors } }) => colors.keyColor};
+  transition: background-color 0.3s;
 
   & > div.contents {
     width: ${pageWidth};

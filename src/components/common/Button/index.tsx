@@ -17,8 +17,7 @@ function Button({ theme = 'default', children, ...props }: ButtonProps) {
 }
 
 const StyledButton = styled.button<{ buttonTheme: ButtonTheme }>`
-  position: relative;
-  z-index: 10;
+  font-size: 1rem;
   padding: 0.5rem 1rem;
   border: 1px solid ${({ theme: { colors } }) => colors.border};
   background-color: ${({
@@ -28,11 +27,15 @@ const StyledButton = styled.button<{ buttonTheme: ButtonTheme }>`
     buttonTheme,
   }) => (buttonTheme === 'default' ? button.default : button.sub)};
   box-shadow: 6px 5px ${({ theme: { colors } }) => colors.button.shadow};
-  color: ${({ theme: { colors } }) => colors.button.font};
+  &,
+  * {
+    color: ${({ theme: { colors } }) => colors.button.font};
+  }
   transition: 0.3s;
   &:hover {
     background-color: ${({ theme: { colors } }) => colors.pointColor};
   }
+  white-space: nowrap;
 `;
 
 export default Button;

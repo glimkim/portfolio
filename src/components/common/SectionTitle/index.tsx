@@ -17,7 +17,7 @@ function SectionTitle({ title = '', align = 'left' }: SectionTitleProps) {
 
 const TitleWrapper = styled.div<{ align: Align }>`
   width: 100%;
-  margin-top: 4rem;
+  padding-top: 4rem;
   border-bottom: 1px solid ${({ theme: { colors } }) => colors.border};
   h3 {
     font-family: 'BlackHanSans';

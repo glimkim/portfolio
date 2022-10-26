@@ -48,6 +48,7 @@
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-console": "off",
+    "no-nested-ternary": "off",
     "prettier/prettier": [
       "error",
       {

@@ -5,30 +5,60 @@ import React from 'react';
 import WorkList from './WorkList';
 
 function Works() {
+  const onClickBtn = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const { name } = e.currentTarget.dataset as { name: string };
+    document
+      .querySelector(`li[data-name="${name}"]`)
+      ?.scrollIntoView({ block: 'start', behavior: 'smooth', inline: 'start' });
+  };
+
   return (
     <SectionWrapper id="works">
       <SectionTitle title="Works" />
       <ul className="navi">
         <li>
-          <a href="#id">Toons</a>
+          <button type="button" onClick={onClickBtn} data-name="Toons">
+            Toons
+          </button>
         </li>
         <li>
-          <a href="#id">Steppay</a>
+          <button
+            type="button"
+            onClick={onClickBtn}
+            data-name="Toons Components"
+          >
+            Toons Components
+          </button>
         </li>
         <li>
-          <a href="#id">Lmitter</a>
+          <button type="button" onClick={onClickBtn} data-name="StepPay">
+            StepPay
+          </button>
         </li>
         <li>
-          <a href="#id">LimChat</a>
+          <button type="button" onClick={onClickBtn} data-name="Lmitter">
+            Lmitter
+          </button>
         </li>
         <li>
-          <a href="#id">BookAnd</a>
+          <button type="button" onClick={onClickBtn} data-name="LimChat">
+            LimChat
+          </button>
         </li>
         <li>
-          <a href="#id">AstellnKern</a>
+          <button type="button" onClick={onClickBtn} data-name="ASTELL & KERN">
+            ASTELL & KERN
+          </button>
         </li>
         <li>
-          <a href="#id">Baekmidang</a>
+          <button type="button" onClick={onClickBtn} data-name="BookAnd">
+            BookAnd
+          </button>
+        </li>
+        <li>
+          <button type="button" onClick={onClickBtn} data-name="Baekmidang">
+            Baekmidang
+          </button>
         </li>
       </ul>
       <WorkList />
@@ -51,7 +81,7 @@ const SectionWrapper = styled.div`
           &::before {
             content: '•';
           }
-          a {
+          button {
             display: block;
             padding: 0.25rem 0;
             transform: scale(1, 1);

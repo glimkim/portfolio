@@ -18,7 +18,7 @@ function WorkItem({
   }, []);
 
   return (
-    <Item>
+    <Item data-name={title}>
       <div className="details">
         <div className="boxTop">
           <Number>{index + 1}</Number>
@@ -57,9 +57,12 @@ const Item = styled.li`
   display: flex;
   align-items: flex-end;
   gap: 1.5rem;
-  margin-bottom: 5rem;
+  padding-top: 5rem;
   border-bottom: 1px solid ${({ theme: { colors } }) => colors.border};
   overflow: hidden;
+  &:first-of-type {
+    padding: 0;
+  }
 
   div.details {
     width: 50%;
@@ -69,15 +72,17 @@ const Item = styled.li`
       div.title {
         display: flex;
         gap: 0.5rem;
-        align-items: center;
+        align-items: flex-end;
         margin-bottom: 0.5rem;
         h6 {
           font-family: 'BlackHanSans';
-          font-size: 2rem;
+          font-size: 1.85rem;
         }
         p {
           font-size: 0.9rem;
           text-align: justify;
+          white-space: nowrap;
+          line-height: 2.5rem;
         }
       }
     }

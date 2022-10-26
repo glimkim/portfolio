@@ -7,13 +7,21 @@ function NavigationList() {
   const drawerState = useContext(HeaderStateContext);
   const drawerDispatch = useContext(HeaderStateDispatch);
 
-  const onClickMenu = useCallback(() => {
-    drawerDispatch && drawerDispatch({ type: 'toggle' });
-  }, [drawerDispatch]);
+  const onClickMenu = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      drawerDispatch && drawerDispatch({ type: 'toggle' });
+      document
+        .getElementById(
+          `${(e.currentTarget.dataset as { name: string })?.name}`,
+        )
+        ?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    },
+    [drawerDispatch],
+  );
 
-  const anchor01 = useRef(null);
-  const anchor02 = useRef(null);
-  const anchor03 = useRef(null);
+  const button01 = useRef(null);
+  const button02 = useRef(null);
+  const button03 = useRef(null);
 
   return (
     <NaviList>
@@ -22,11 +30,16 @@ function NavigationList() {
           in={drawerState}
           timeout={300}
           unmountOnExit
-          nodeRef={anchor01}
+          nodeRef={button01}
         >
-          <a href="#aboutMe" onClick={onClickMenu} ref={anchor01}>
+          <button
+            type="button"
+            data-name="aboutMe"
+            onClick={onClickMenu}
+            ref={button01}
+          >
             ABOUT ME
-          </a>
+          </button>
         </CSSTransition>
       </li>
       <li>
@@ -34,11 +47,16 @@ function NavigationList() {
           in={drawerState}
           timeout={300}
           unmountOnExit
-          nodeRef={anchor02}
+          nodeRef={button02}
         >
-          <a href="#works" onClick={onClickMenu} ref={anchor02}>
+          <button
+            type="button"
+            data-name="works"
+            onClick={onClickMenu}
+            ref={button02}
+          >
             WORKS
-          </a>
+          </button>
         </CSSTransition>
       </li>
       <li>
@@ -46,11 +64,16 @@ function NavigationList() {
           in={drawerState}
           timeout={300}
           unmountOnExit
-          nodeRef={anchor03}
+          nodeRef={button03}
         >
-          <a href="#contact" onClick={onClickMenu} ref={anchor03}>
+          <button
+            type="button"
+            data-name="contact"
+            onClick={onClickMenu}
+            ref={button03}
+          >
             CONTACT
-          </a>
+          </button>
         </CSSTransition>
       </li>
     </NaviList>

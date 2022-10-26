@@ -1,9 +1,38 @@
 import styled from '@emotion/styled';
 import Button from 'components/common/Button';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { headerHeight } from 'styles/global';
 
 function Main() {
+  const onClickScrollDown = useCallback(() => {
+    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+  }, [window.innerHeight]);
+
+  const onClickDownloadCV = useCallback(() => {
+    const link = document.createElement('a');
+    link.href = '/assets/Lim_Kim_CV.pdf';
+    link.setAttribute('download', `Lim_Kim_CV.pdf`);
+    document.body.appendChild(link);
+    link.click();
+    link.parentNode?.removeChild(link);
+  }, []);
+
+  const onClickContactMe = useCallback(() => {
+    const toMatch = [
+      /Android/i,
+      /webOS/i,
+      /iPhone/i,
+      /BlackBerry/i,
+      /Windows Phone/i,
+    ];
+
+    if (toMatch.some((toMatchItem) => navigator.userAgent.match(toMatchItem))) {
+      window.location.href = 'tel:447784990516';
+    } else {
+      window.location.href = 'mailto:mail@example.org';
+    }
+  }, []);
+
   return (
     <MainContainer>
       <div className="textBox">
@@ -12,15 +41,15 @@ function Main() {
       </div>
       <ul className="buttonList">
         <li>
-          <Button>Find out about me more ↓</Button>
+          <Button onClick={onClickScrollDown}>Find out about me more ↓</Button>
         </li>
         <li>
           <h4>or you can just</h4>
-          <Button>Download my CV ✓</Button>
+          <Button onClick={onClickDownloadCV}>Download my CV ✓</Button>
         </li>
         <li>
           <h4>or just</h4>
-          <Button>Contact me !</Button>
+          <Button onClick={onClickContactMe}>Contact me !</Button>
         </li>
       </ul>
     </MainContainer>

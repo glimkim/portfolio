@@ -14,6 +14,7 @@ import {
   PageThemeDispatch,
 } from 'context/pageTheme';
 import IconBtn from 'components/common/IconButton';
+import { appearFromLeft, fadeIn, scaleX0to1 } from 'styles/animation';
 import IconLinkBox from './IconLinkBox';
 import NavigationList from './NavigationList';
 
@@ -79,6 +80,9 @@ const StyledHeader = styled.header<{
       align-items: center;
       width: 100%;
       height: 100%;
+      h1 {
+        ${appearFromLeft(400)}
+      }
       button.switch {
         position: absolute;
         right: 0;
@@ -87,6 +91,7 @@ const StyledHeader = styled.header<{
         padding-left: 1.43rem;
         figure {
           height: 100%;
+          ${fadeIn(400)}
           svg {
             height: 100%;
           }
@@ -105,6 +110,7 @@ const StyledHeader = styled.header<{
       height: 1px;
       background-color: ${({ theme: { colors } }) => colors.border};
       transition: ${({ drawerState }) => (drawerState ? '0.8s' : '0.3s')};
+      ${scaleX0to1};
     }
   }
   div.headerLeft {
@@ -124,6 +130,7 @@ const StyledHeader = styled.header<{
     background-color: ${({ theme: { colors } }) => colors.keyColor};
     transition: width 0.4s;
     transition-timing-function: ease-in-out;
+    ${appearFromLeft(600)}
     button.toggleBtn {
       align-self: flex-end;
       width: ${drawerWidthClosed};

@@ -9,12 +9,16 @@ function NavigationList() {
 
   const onClickMenu = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
+      const section = document.getElementById(
+        `${(e.currentTarget.dataset as { name: string })?.name}`,
+      );
+      const sectionTitle = section?.querySelector('.sectionTitle');
+      sectionTitle?.classList.remove('active');
       drawerDispatch && drawerDispatch({ type: 'toggle' });
-      document
-        .getElementById(
-          `${(e.currentTarget.dataset as { name: string })?.name}`,
-        )
-        ?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      section?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+
+      sectionTitle?.classList.contains('active') ||
+        sectionTitle?.classList.add('active');
     },
     [drawerDispatch],
   );

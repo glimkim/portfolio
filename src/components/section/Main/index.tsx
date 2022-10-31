@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Button from 'components/common/Button';
 import React, { useCallback } from 'react';
+import { appearFromBottom, appearFromLeft, fadeIn } from 'styles/animation';
 import { headerHeight } from 'styles/global';
 
 function Main() {
@@ -74,10 +75,12 @@ const MainContainer = styled.div`
       font-family: 'BlackHanSans';
       font-size: 4rem;
       text-shadow: 4px 2px 6px ${({ theme: { colors } }) => colors.shadow};
+      ${appearFromBottom(600, 600)}
     }
     h3 {
       font-family: 'Faster One';
       font-size: 2rem;
+      ${appearFromLeft(600, 800)}
     }
   }
 
@@ -90,13 +93,16 @@ const MainContainer = styled.div`
       margin-bottom: 2rem;
       &:nth-of-type(1) {
         align-self: flex-start;
+        ${fadeIn(600, 1000)}
       }
       &:nth-of-type(2) {
         align-self: center;
+        ${fadeIn(600, 1200)}
       }
       &:nth-of-type(3) {
         align-self: flex-end;
         margin-bottom: 0;
+        ${fadeIn(600, 1400)}
       }
       h4 {
         font-family: 'BlackHanSans';

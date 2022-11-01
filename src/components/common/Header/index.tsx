@@ -33,11 +33,17 @@ function Header() {
     if (headerStateDispatch) headerStateDispatch({ type: 'toggle' });
   }, [headerStateDispatch]);
 
+  const onClickLogo = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <StyledHeader drawerState={headerState} pageTheme={pageTheme}>
       <div className="headerTop">
         <div>
-          <Logo />
+          <button type="button" className="logo" onClick={onClickLogo}>
+            <Logo />
+          </button>
           <IconBtn icon="Mode" onClick={onToggleMode} className="switch" />
         </div>
         <div className="line" />
@@ -80,8 +86,8 @@ const StyledHeader = styled.header<{
       align-items: center;
       width: 100%;
       height: 100%;
-      h1 {
-        ${appearFromLeft(400)}
+      button.logo {
+        ${appearFromLeft(600, 200)}
       }
       button.switch {
         position: absolute;

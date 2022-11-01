@@ -1,7 +1,9 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Button from 'components/common/Button';
 import SVG from 'components/common/SVG';
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import _ from 'lodash';
 import { ItemInfo } from './WorkList';
 
 interface ItemProps {
@@ -11,17 +13,49 @@ interface ItemProps {
 
 function WorkItem({
   index,
-  itemInfo: { title, date, link, gitLink, description, img, gitCodeDisabled },
+  itemInfo: {
+    title,
+    date,
+    link,
+    gitLink,
+    stacks,
+    description,
+    img,
+    gitCodeDisabled,
+  },
 }: ItemProps) {
+  const ref = useRef<HTMLLIElement>(null);
+  const [itemTop, setItemTop] = useState(0);
+
   const onClickBtn = useCallback((_link: string) => {
     window.open(_link);
   }, []);
 
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    const onScroll: () => void = _.throttle(() => {
+      timer = setTimeout(() => {
+        setItemTop(ref.current?.getBoundingClientRect().top || 0);
+      }, 300);
+    }, 300);
+
+    window.addEventListener('scroll', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.clearTimeout(timer);
+    };
+  }, []);
+
   return (
-    <Item data-name={title}>
+    <Item
+      data-name={title}
+      ref={ref}
+      className={itemTop - 350 <= 0 ? 'imageActive' : ''}
+    >
       <div className="details">
         <div className="boxTop">
-          <Number>{index + 1}</Number>
+          <Number itemTop={itemTop - 350}>{index + 1}</Number>
           <div className="title">
             <h6>{title}</h6>
             <p>{date}</p>
@@ -44,7 +78,10 @@ function WorkItem({
             </Button>
           )}
         </div>
-        <p>{description}</p>
+        <div className="text">
+          <span className="stacks">Main Stacks : {stacks}</span>
+          {description}
+        </div>
       </div>
       <figure>
         <img src={img} alt={`${title} preview img`} />
@@ -60,6 +97,7 @@ const Item = styled.li`
   padding-top: 5rem;
   border-bottom: 1px solid ${({ theme: { colors } }) => colors.border};
   overflow: hidden;
+
   &:first-of-type {
     padding: 0;
   }
@@ -77,6 +115,7 @@ const Item = styled.li`
         h6 {
           font-family: 'BlackHanSans';
           font-size: 1.85rem;
+          color: ${({ theme: { colors } }) => colors.title};
         }
         p {
           font-size: 0.9rem;
@@ -107,21 +146,61 @@ const Item = styled.li`
             align-items: center;
             svg {
               height: 1.25rem;
-              path {
-                fill: #333;
-              }
             }
           }
         }
       }
     }
   }
+
+  div.text {
+    transform: translateX(-50px);
+    opacity: 0.5;
+    transition: 0.6s;
+    transition-timing-function: ease-out;
+    span.stacks {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    ul {
+      width: 100%;
+      li {
+        position: relative;
+        padding-left: 1rem;
+        padding: 0.5rem 0 0.5rem 1rem;
+        line-height: 150%;
+        &::after {
+          position: absolute;
+          left: 0;
+          top: 0.4rem;
+          content: '»';
+        }
+      }
+    }
+  }
+
   > figure {
     width: 50%;
     height: 25rem;
+    opacity: 0.4;
+    transform: translateY(50px);
+    transition: 0.6s;
+    transition-timing-function: ease-in-out;
     img {
       width: 100%;
       object-fit: contain;
+    }
+  }
+
+  &.imageActive {
+    > figure {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    div.text {
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 
@@ -174,13 +253,34 @@ const Item = styled.li`
   }
 `;
 
-const Number = styled.h5`
+const Number = styled.h5<{ itemTop: number }>`
   height: 9rem;
   line-height: 9rem;
   font-size: 11rem;
   font-family: 'BlackHanSans';
   color: ${({ theme: { colors } }) => `${colors.font}70`};
   margin-bottom: 1rem;
+
+  ${({ itemTop }) => {
+    let style = ``;
+
+    if (itemTop <= 0) {
+      style = `transform : translateX(0) scale(1, 1); opacity: 1;`;
+    } else if (itemTop > 0 && itemTop < 250) {
+      if (itemTop < 150) {
+        style = `transform : translateX(${itemTop}px); opacity: 1;`;
+      } else {
+        style = `transform : translateX(${itemTop}px); opacity: 0.5;`;
+      }
+    } else {
+      style = `transform : translateX(250px); opacity: 0;`;
+    }
+    return css`
+      ${style}
+    `;
+  }};
+  transition: 1s;
+  transition-timing-function: ease-in-out;
 
   @media screen and (max-width: 1080px) {
     height: 7rem;

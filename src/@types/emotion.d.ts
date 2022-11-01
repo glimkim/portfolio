@@ -14,8 +14,10 @@ declare module '@emotion/react' {
       sub: string;
       shadow: string;
       font: string;
+      hoverBg: string;
     };
     footer: string;
+    icon: string;
   }
   export interface Theme {
     colors: Colors;

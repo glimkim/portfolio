@@ -75,11 +75,13 @@ const MainContainer = styled.div`
       font-family: 'BlackHanSans';
       font-size: 4rem;
       text-shadow: 4px 2px 6px ${({ theme: { colors } }) => colors.shadow};
+      color: ${({ theme: { colors } }) => colors.title};
       ${appearFromBottom(600, 600)}
     }
     h3 {
       font-family: 'Faster One';
       font-size: 2rem;
+      color: ${({ theme: { colors } }) => colors.title};
       ${appearFromLeft(600, 800)}
     }
   }

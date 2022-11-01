@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.js": "/lim-portfolio/static/js/main.2c216a11.js",
+    "static/js/787.aa4e6109.chunk.js": "/lim-portfolio/static/js/787.aa4e6109.chunk.js",
+    "static/media/profile_img.png": "/lim-portfolio/static/media/profile_img.ec96dbc2735de527f023.png",
+    "static/media/item_bn_06.png": "/lim-portfolio/static/media/item_bn_06.077a9d967144e8220945.png",
+    "static/media/item_bn_08.png": "/lim-portfolio/static/media/item_bn_08.5e6187fb0aabc2242744.png",
+    "static/media/item_bn_01.png": "/lim-portfolio/static/media/item_bn_01.8d02c6383c54006b474d.png",
+    "static/media/item_bn_04.png": "/lim-portfolio/static/media/item_bn_04.dfb122faf508c1cea212.png",
+    "static/media/item_bn_03.png": "/lim-portfolio/static/media/item_bn_03.508495d9350dd8856e5f.png",
+    "static/media/item_bn_05.png": "/lim-portfolio/static/media/item_bn_05.af7809e2cda378bffec0.png",
+    "static/media/item_bn_02.png": "/lim-portfolio/static/media/item_bn_02.40d0e152a14422ec2e2e.png",
+    "static/media/logo_dark.svg": "/lim-portfolio/static/media/logo_dark.bb9522f4bdd8a054dcc8884ff25bc051.svg",
+    "static/media/notion_icon.svg": "/lim-portfolio/static/media/notion_icon.6b7c8516cb42ecf6a639b55fae36a023.svg",
+    "static/media/logo_default.svg": "/lim-portfolio/static/media/logo_default.82225ff0f3bf22bb66e1be3de1568cfe.svg",
+    "static/media/gitHub_icon.svg": "/lim-portfolio/static/media/gitHub_icon.51046e851420a8ef21d2d41c56430ee7.svg",
+    "index.html": "/lim-portfolio/index.html",
+    "static/media/mode_icon.svg": "/lim-portfolio/static/media/mode_icon.aa65cf65d98b7f3ce12c72249d784fc8.svg",
+    "static/media/arrow_icon.svg": "/lim-portfolio/static/media/arrow_icon.f01eb587165b597796fce2da626dc5c2.svg",
+    "static/media/linkedIn_icon.svg": "/lim-portfolio/static/media/linkedIn_icon.816bf2820e060c72831512334403fb88.svg",
+    "main.2c216a11.js.map": "/lim-portfolio/static/js/main.2c216a11.js.map",
+    "787.aa4e6109.chunk.js.map": "/lim-portfolio/static/js/787.aa4e6109.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.2c216a11.js"
+  ]
+}

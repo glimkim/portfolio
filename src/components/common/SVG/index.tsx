@@ -27,7 +27,7 @@ const Img = styled.figure<{ icon: IconType }>`
     if (iconsToColor.includes(icon)) {
       styles += `svg {
           path {
-            fill: ${colors.font};
+            fill: ${colors.icon};
           }
         }`;
     }

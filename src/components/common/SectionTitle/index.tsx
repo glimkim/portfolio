@@ -16,10 +16,6 @@ function SectionTitle({ title = '', align = 'left' }: SectionTitleProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log(isActive, title);
-  }, [isActive]);
-
-  useEffect(() => {
     const elementPosition = ref.current?.offsetTop || 0;
 
     if (scrollTop >= elementPosition - 400) {
@@ -37,8 +33,10 @@ function SectionTitle({ title = '', align = 'left' }: SectionTitleProps) {
       ref={ref}
     >
       <h3>
-        {title.split('').map((_str) => (
-          <span>{_str === ' ' ? <span>&nbsp;</span> : _str}</span>
+        {title.split('').map((_str, index) => (
+          <span key={`${_str}_${index}`}>
+            {_str === ' ' ? <span>&nbsp;</span> : _str}
+          </span>
         ))}
       </h3>
     </TitleWrapper>
@@ -56,6 +54,7 @@ const TitleWrapper = styled.div<{ letterLength: number; align: Align }>`
       display: block;
       font-family: 'BlackHanSans';
       font-size: 4rem;
+      color: ${({ theme: { colors } }) => colors.title};
     }
     text-align: ${({ align }) => align};
   }

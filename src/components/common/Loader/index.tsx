@@ -32,8 +32,9 @@ const LoadingContainer = styled.div`
     width: fit-content;
     li.letter {
       display: block;
-      font-size: 4rem;
-      font-family: 'BlackHanSans';
+      font-size: 4.15rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
       animation-name: Letter;
       animation-duration: 2.8s;
       animation-iteration-count: infinite;

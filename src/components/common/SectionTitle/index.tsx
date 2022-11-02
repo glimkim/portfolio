@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import useScrollTop from 'hooks/useScrollTop';
-import { appearFromBottom, appearFromLeft, upNdown } from 'styles/animation';
+import { upNdown } from 'styles/animation';
 import { css } from '@emotion/react';
 
 type Align = 'center' | 'left';
@@ -52,8 +52,9 @@ const TitleWrapper = styled.div<{ letterLength: number; align: Align }>`
     display: flex;
     span {
       display: block;
-      font-family: 'BlackHanSans';
-      font-size: 4rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 4.15rem;
       color: ${({ theme: { colors } }) => colors.title};
     }
     text-align: ${({ align }) => align};

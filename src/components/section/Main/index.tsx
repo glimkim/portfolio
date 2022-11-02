@@ -72,9 +72,9 @@ const MainContainer = styled.div`
     width: fit-content;
     margin-bottom: 3rem;
     h2 {
-      font-family: 'BlackHanSans';
-      font-size: 4rem;
-      text-shadow: 4px 2px 6px ${({ theme: { colors } }) => colors.shadow};
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 4.25rem;
       color: ${({ theme: { colors } }) => colors.title};
       ${appearFromBottom(600, 600)}
     }
@@ -107,8 +107,10 @@ const MainContainer = styled.div`
         ${fadeIn(600, 1400)}
       }
       h4 {
-        font-family: 'BlackHanSans';
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
         margin-bottom: 2rem;
+        font-size: 1.25rem;
       }
       button {
         width: 33.5rem;

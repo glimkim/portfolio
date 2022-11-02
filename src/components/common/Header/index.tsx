@@ -79,6 +79,7 @@ const StyledHeader = styled.header<{
     border-left: 1px solid ${({ theme: { colors } }) => colors.border};
     background-color: ${({ theme: { colors } }) => colors.keyColor};
     transition: background-color 0.3s;
+    box-sizing: border-box;
     > div {
       position: relative;
       display: flex;
@@ -174,7 +175,7 @@ const StyledHeader = styled.header<{
     width: 100%;
     div.headerTop {
       left: 0;
-      width: 100%;
+      width: 100vw;
       padding: 0 1rem;
       box-sizing: border-box;
       border-bottom: 1px solid ${({ theme: { colors } }) => colors.border};
@@ -184,7 +185,10 @@ const StyledHeader = styled.header<{
     }
 
     div.headerLeft {
+      width: 0;
+      height: 0;
       display: none;
+      visibility: hidden;
     }
   }
 `;

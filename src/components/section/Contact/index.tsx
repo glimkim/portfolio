@@ -50,7 +50,9 @@ const SectionWrapper = styled.div`
         align-items: center;
         height: 2rem;
         line-height: 2rem;
-        font-family: 'BlackHanSans';
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        font-size: 1.15rem;
         span.bar {
           display: flex;
           width: 4px;

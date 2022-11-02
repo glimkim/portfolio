@@ -20,10 +20,7 @@ function Home() {
   const [fontLoaded, setFontLoaded] = useState<boolean>(false);
   WebFont.load({
     google: {
-      families: ['IBM Plex Mono', 'Faster One'],
-    },
-    custom: {
-      families: ['BlackHanSans'],
+      families: ['IBM Plex Mono', 'Faster One', 'Poppins:900'],
     },
     active: () => {
       setTimeout(() => {

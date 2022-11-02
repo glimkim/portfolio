@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Button from 'components/common/Button';
 import SVG from 'components/common/SVG';
@@ -51,11 +50,13 @@ function WorkItem({
     <Item
       data-name={title}
       ref={ref}
-      className={itemTop - 350 <= 0 ? 'imageActive' : ''}
+      className={itemTop - 400 <= 0 ? 'imageActive' : ''}
     >
       <div className="details">
         <div className="boxTop">
-          <Number itemTop={itemTop - 350}>{index + 1}</Number>
+          <Number className={itemTop - 400 <= 0 ? 'active' : ''}>
+            {index + 1}
+          </Number>
           <div className="title">
             <h6>{title}</h6>
             <p>{date}</p>
@@ -113,8 +114,9 @@ const Item = styled.li`
         align-items: flex-end;
         margin-bottom: 0.5rem;
         h6 {
-          font-family: 'BlackHanSans';
-          font-size: 1.85rem;
+          font-family: 'Poppins', sans-serif;
+          font-weight: 900;
+          font-size: 2rem;
           color: ${({ theme: { colors } }) => colors.title};
         }
         p {
@@ -253,34 +255,24 @@ const Item = styled.li`
   }
 `;
 
-const Number = styled.h5<{ itemTop: number }>`
+const Number = styled.h5`
   height: 9rem;
   line-height: 9rem;
-  font-size: 11rem;
-  font-family: 'BlackHanSans';
+  font-size: 12rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   color: ${({ theme: { colors } }) => `${colors.font}70`};
   margin-bottom: 1rem;
 
-  ${({ itemTop }) => {
-    let style = ``;
-
-    if (itemTop <= 0) {
-      style = `transform : translateX(0) scale(1, 1); opacity: 1;`;
-    } else if (itemTop > 0 && itemTop < 250) {
-      if (itemTop < 150) {
-        style = `transform : translateX(${itemTop}px); opacity: 1;`;
-      } else {
-        style = `transform : translateX(${itemTop}px); opacity: 0.5;`;
-      }
-    } else {
-      style = `transform : translateX(250px); opacity: 0;`;
-    }
-    return css`
-      ${style}
-    `;
-  }};
-  transition: 1s;
+  transition: 1.2s;
   transition-timing-function: ease-in-out;
+  transform: translateX(120px);
+  transform-origin: right bottom;
+  opacity: 0;
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
 
   @media screen and (max-width: 1080px) {
     height: 7rem;

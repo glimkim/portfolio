@@ -11,7 +11,7 @@ function Main() {
 
   const onClickDownloadCV = useCallback(() => {
     const link = document.createElement('a');
-    link.href = '/assets/Lim_Kim_CV.pdf';
+    link.href = 'assets/Lim_Kim_CV.pdf';
     link.setAttribute('download', `Lim_Kim_CV.pdf`);
     document.body.appendChild(link);
     link.click();

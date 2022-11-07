@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, useContext } from 'react';
+import React, { HTMLAttributes } from 'react';
 import * as icons from 'assets/icons';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';

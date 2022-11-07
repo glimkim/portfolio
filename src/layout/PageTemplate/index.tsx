@@ -73,7 +73,7 @@ const PageContainer = styled.div`
 
   @media screen and (max-width: 767px) {
     & > div.contents {
-      padding: 0 1rem;
+      padding: ${headerHeight} 1rem 0;
     }
   }
 `;

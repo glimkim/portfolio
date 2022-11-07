@@ -37,7 +37,7 @@ function Main() {
   return (
     <MainContainer>
       <div className="textBox">
-        <h2>Hello, I am Lim.</h2>
+        <h2>Hello, I&apos;m Lim.</h2>
         <h3>Frontend Developer</h3>
       </div>
       <ul className="buttonList">
@@ -113,7 +113,7 @@ const MainContainer = styled.div`
         font-size: 1.25rem;
       }
       button {
-        width: 33.5rem;
+        width: 31rem;
         max-width: 100%;
       }
     }
@@ -148,10 +148,18 @@ const MainContainer = styled.div`
     }
   }
 
-  @media screen and (max-width: 680px) {
+  @media screen and (max-width: 540px) {
     div.textBox {
       h2 {
-        font-size: 3rem;
+        font-size: 3.5rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 414px) {
+    div.textBox {
+      h2 {
+        font-size: 2.5rem;
       }
     }
   }

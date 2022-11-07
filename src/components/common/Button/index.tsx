@@ -18,7 +18,7 @@ function Button({ theme = 'default', children, ...props }: ButtonProps) {
 
 const StyledButton = styled.button<{ buttonTheme: ButtonTheme }>`
   font-size: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
   border: 1px solid ${({ theme: { colors } }) => colors.border};
   background-color: ${({
     theme: {

@@ -6,7 +6,7 @@ import Bn03 from 'assets/images/item_bn_03.png';
 import Bn04 from 'assets/images/item_bn_04.png';
 import Bn05 from 'assets/images/item_bn_05.png';
 import Bn06 from 'assets/images/item_bn_06.png';
-import Bn07 from 'assets/images/item_bn_08.png';
+import Bn07 from 'assets/images/item_bn_07.png';
 import Bn08 from 'assets/images/item_bn_08.png';
 import WorkItem from './WorkItem';
 
@@ -26,7 +26,7 @@ const workList: ItemInfo[] = [
     title: 'Toons',
     date: '01. 06. 2022 - 14. 10. 2022',
     link: 'https://toons.jinwoo.space/',
-    gitLink: 'https://github.com/glimkim/portfolio',
+    gitLink: 'https://github.com/glimkim/toons',
     stacks: 'ReactJS, TypeScript, react-query, Redux, styled-components',
     description: (
       <ul>
@@ -46,8 +46,8 @@ const workList: ItemInfo[] = [
   {
     title: 'Toons Components',
     date: '01. 06. 2022 - 24. 09. 2022',
-    link: 'https://toons.jinwoo.space/',
-    gitLink: 'https://github.com/glimkim/portfolio',
+    link: 'https://glimkim.github.io/toons-ui-components/?path=/story/toons-ui-intro--page',
+    gitLink: 'https://github.com/glimkim/toons-ui-components',
     stacks: 'ReactJS, TypeScript, Storybook, styled-components, rollup',
     description: (
       <ul>
@@ -91,7 +91,7 @@ const workList: ItemInfo[] = [
     title: 'Lmitter',
     date: '24. 04. 2021 - 15. 05. 2021',
     link: 'https://hellolimi.github.io/lmitter/#/',
-    gitLink: '',
+    gitLink: 'https://github.com/glimkim/lmitter',
     stacks: 'ReactJS, Firebase, SCSS',
     description: (
       <ul>
@@ -109,7 +109,7 @@ const workList: ItemInfo[] = [
     title: 'LimChat',
     date: '28. 03. 2021 - 08. 04. 2021',
     link: 'https://limchat.herokuapp.com/',
-    gitLink: '',
+    gitLink: 'https://github.com/glimkim/limChat',
     stacks: 'Node.js, JavaScript, Express.js, socket.io, HTML, CSS',
     description: (
       <ul>
@@ -130,7 +130,7 @@ const workList: ItemInfo[] = [
     title: 'ASTELL & KERN',
     date: '28. 02. 2021 - 08. 03. 2021',
     link: 'https://glimkim.github.io/AstellnKern_Renewal_Project/',
-    gitLink: '',
+    gitLink: 'https://github.com/glimkim/AstellnKern_Renewal_Project',
     stacks: 'JavaScript, jQuery, HTML, CSS',
     description: (
       <ul>
@@ -149,9 +149,9 @@ const workList: ItemInfo[] = [
   {
     title: 'BookAnd',
     date: '31. 12. 2020 - 15. 02. 2021',
-    link: 'https://www.steppay.kr/',
+    link: 'http://bookand.dothome.co.kr/',
+    gitLink: 'https://github.com/glimkim/BookAnd_Rebranding_Project_PC',
     stacks: 'JavaScript, jQuery, HTML, CSS',
-    gitLink: '',
     description: (
       <ul>
         <li>
@@ -171,7 +171,7 @@ const workList: ItemInfo[] = [
     title: 'Baekmidang',
     date: '24. 04. 2020 - 11. 05. 2020',
     link: 'https://glimkim.github.io/Baekmidang_Renewal_Project_PC/',
-    gitLink: '',
+    gitLink: 'https://github.com/glimkim/Baekmidang_Renewal_Project_PC',
     stacks: 'JavaScript, jQuery, HTML, CSS',
     description: (
       <ul>

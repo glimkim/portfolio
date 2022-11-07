@@ -10,10 +10,17 @@ export const getGlobalStyles = (theme: Theme) => {
   return css`
     ${resetCss};
 
+    html,
+    body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
     * {
       font-family: 'IBM Plex Mono', sans-serif;
       font-size: 1rem;
       color: ${theme.colors.font};
+      box-sizing: border-box;
     }
 
     @media screen and (min-width: 1440px) {

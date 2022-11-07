@@ -251,6 +251,12 @@ const Item = styled.li`
       button {
         width: 100%;
       }
+      button.gitBtn {
+        span.iconWrapper {
+          display: flex;
+          justify-content: center;
+        }
+      }
     }
   }
 `;

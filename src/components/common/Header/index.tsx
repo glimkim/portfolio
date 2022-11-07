@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import Logo from 'components/common/Logo';
 import {
@@ -15,6 +15,7 @@ import {
 } from 'context/pageTheme';
 import IconBtn from 'components/common/IconButton';
 import { appearFromLeft, fadeIn, scaleX0to1 } from 'styles/animation';
+import _ from 'lodash';
 import IconLinkBox from './IconLinkBox';
 import NavigationList from './NavigationList';
 
@@ -23,6 +24,7 @@ function Header() {
   const headerState = useContext(HeaderStateContext);
   const pageTheme = useContext(PageThemeContext);
   const pageThemeDispatch = useContext(PageThemeDispatch);
+  const [isMobileSize, setIsMobileSize] = useState(false);
 
   const onToggleMode = useCallback(() => {
     pageThemeDispatch && pageThemeDispatch({ type: 'toggle' });
@@ -37,6 +39,17 @@ function Header() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
+  useEffect(() => {
+    const onResize = _.throttle(() => {
+      window.innerWidth <= 767 ? setIsMobileSize(true) : setIsMobileSize(false);
+    }, 300);
+    window.addEventListener('resize', onResize);
+
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
+  }, []);
+
   return (
     <StyledHeader drawerState={headerState} pageTheme={pageTheme}>
       <div className="headerTop">
@@ -48,15 +61,17 @@ function Header() {
         </div>
         <div className="line" />
       </div>
-      <div className="headerLeft">
-        <IconBtn
-          className={headerState ? 'toggleBtn active' : 'toggleBtn'}
-          onClick={onToggleDrawer}
-          icon="Arrow"
-        />
-        <NavigationList />
-        <IconLinkBox drawerState={headerState} />
-      </div>
+      {!isMobileSize && (
+        <div className="headerLeft">
+          <IconBtn
+            className={headerState ? 'toggleBtn active' : 'toggleBtn'}
+            onClick={onToggleDrawer}
+            icon="Arrow"
+          />
+          <NavigationList />
+          <IconLinkBox drawerState={headerState} />
+        </div>
+      )}
     </StyledHeader>
   );
 }
@@ -121,9 +136,9 @@ const StyledHeader = styled.header<{
     }
   }
   div.headerLeft {
-    position: absolute;
+    position: fixed;
     top: ${headerHeight};
-    left: 0;
+    left: calc(((100vw - ${pageWidth}px) / 2) - 2px);
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -155,6 +170,17 @@ const StyledHeader = styled.header<{
       justify-self: flex-end;
     }
   }
+
+  div.mobileNavi {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border: 1px solid ${({ theme: { colors } }) => colors.border};
+    width: 50vw;
+    height: 50vw;
+    border-radius: 100%;
+  }
+
   @media screen and (max-width: 1440px) {
     div.headerTop {
       padding: 0 1rem;
@@ -175,9 +201,10 @@ const StyledHeader = styled.header<{
     width: 100%;
     div.headerTop {
       left: 0;
-      width: 100vw;
+      width: 100%;
       padding: 0 1rem;
       box-sizing: border-box;
+      border: none;
       border-bottom: 1px solid ${({ theme: { colors } }) => colors.border};
       div.line {
         display: none;

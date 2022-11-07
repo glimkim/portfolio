@@ -1,10 +1,12 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import SectionTitle from 'components/common/SectionTitle';
-import React from 'react';
+import _ from 'lodash';
+import React, { useEffect, useState } from 'react';
 import WorkList from './WorkList';
 
 function Works() {
+  const [isMobileSize, setIsMobileSize] = useState(false);
   const onClickBtn = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = e.currentTarget.dataset as { name: string };
     document
@@ -12,55 +14,72 @@ function Works() {
       ?.scrollIntoView({ block: 'start', behavior: 'smooth', inline: 'start' });
   };
 
+  useEffect(() => {
+    const onResize = _.throttle(() => {
+      window.innerWidth <= 767 ? setIsMobileSize(true) : setIsMobileSize(false);
+    }, 300);
+    window.addEventListener('resize', onResize);
+
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
+  }, []);
+
   return (
     <SectionWrapper id="works">
       <SectionTitle title="Works" />
-      <ul className="navi">
-        <li>
-          <button type="button" onClick={onClickBtn} data-name="Toons">
-            Toons
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            onClick={onClickBtn}
-            data-name="Toons Components"
-          >
-            Toons Components
-          </button>
-        </li>
-        <li>
-          <button type="button" onClick={onClickBtn} data-name="StepPay">
-            StepPay
-          </button>
-        </li>
-        <li>
-          <button type="button" onClick={onClickBtn} data-name="Lmitter">
-            Lmitter
-          </button>
-        </li>
-        <li>
-          <button type="button" onClick={onClickBtn} data-name="LimChat">
-            LimChat
-          </button>
-        </li>
-        <li>
-          <button type="button" onClick={onClickBtn} data-name="ASTELL & KERN">
-            ASTELL & KERN
-          </button>
-        </li>
-        <li>
-          <button type="button" onClick={onClickBtn} data-name="BookAnd">
-            BookAnd
-          </button>
-        </li>
-        <li>
-          <button type="button" onClick={onClickBtn} data-name="Baekmidang">
-            Baekmidang
-          </button>
-        </li>
-      </ul>
+      {!isMobileSize && (
+        <ul className="navi">
+          <li>
+            <button type="button" onClick={onClickBtn} data-name="Toons">
+              Toons
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              onClick={onClickBtn}
+              data-name="Toons Components"
+            >
+              Toons Components
+            </button>
+          </li>
+          <li>
+            <button type="button" onClick={onClickBtn} data-name="StepPay">
+              StepPay
+            </button>
+          </li>
+          <li>
+            <button type="button" onClick={onClickBtn} data-name="Lmitter">
+              Lmitter
+            </button>
+          </li>
+          <li>
+            <button type="button" onClick={onClickBtn} data-name="LimChat">
+              LimChat
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              onClick={onClickBtn}
+              data-name="ASTELL & KERN"
+            >
+              ASTELL & KERN
+            </button>
+          </li>
+          <li>
+            <button type="button" onClick={onClickBtn} data-name="BookAnd">
+              BookAnd
+            </button>
+          </li>
+          <li>
+            <button type="button" onClick={onClickBtn} data-name="Baekmidang">
+              Baekmidang
+            </button>
+          </li>
+        </ul>
+      )}
       <WorkList />
     </SectionWrapper>
   );

@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.js": "/portfolio/static/js/main.60dd3da6.js",
+    "main.js": "/portfolio/static/js/main.dd18bc59.js",
     "static/js/787.aa4e6109.chunk.js": "/portfolio/static/js/787.aa4e6109.chunk.js",
     "static/media/profile_img.png": "/portfolio/static/media/profile_img.ec96dbc2735de527f023.png",
     "static/media/item_bn_06.png": "/portfolio/static/media/item_bn_06.077a9d967144e8220945.png",
     "static/media/item_bn_08.png": "/portfolio/static/media/item_bn_08.5e6187fb0aabc2242744.png",
     "static/media/item_bn_01.png": "/portfolio/static/media/item_bn_01.8d02c6383c54006b474d.png",
     "static/media/item_bn_04.png": "/portfolio/static/media/item_bn_04.dfb122faf508c1cea212.png",
+    "static/media/item_bn_07.png": "/portfolio/static/media/item_bn_07.0c607ee3d638ea6b597c.png",
     "static/media/item_bn_03.png": "/portfolio/static/media/item_bn_03.508495d9350dd8856e5f.png",
     "static/media/item_bn_05.png": "/portfolio/static/media/item_bn_05.af7809e2cda378bffec0.png",
     "static/media/item_bn_02.png": "/portfolio/static/media/item_bn_02.40d0e152a14422ec2e2e.png",
@@ -18,10 +19,10 @@
     "static/media/mode_icon.svg": "/portfolio/static/media/mode_icon.aa65cf65d98b7f3ce12c72249d784fc8.svg",
     "static/media/arrow_icon.svg": "/portfolio/static/media/arrow_icon.f01eb587165b597796fce2da626dc5c2.svg",
     "static/media/linkedIn_icon.svg": "/portfolio/static/media/linkedIn_icon.816bf2820e060c72831512334403fb88.svg",
-    "main.60dd3da6.js.map": "/portfolio/static/js/main.60dd3da6.js.map",
+    "main.dd18bc59.js.map": "/portfolio/static/js/main.dd18bc59.js.map",
     "787.aa4e6109.chunk.js.map": "/portfolio/static/js/787.aa4e6109.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.60dd3da6.js"
+    "static/js/main.dd18bc59.js"
   ]
 }

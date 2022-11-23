@@ -108,7 +108,7 @@ const workList: ItemInfo[] = [
   {
     title: 'LimChat',
     date: '28. 03. 2021 - 08. 04. 2021',
-    link: 'https://limchat.herokuapp.com/',
+    link: 'https://limchat.fly.dev/',
     gitLink: 'https://github.com/glimkim/limChat',
     stacks: 'Node.js, JavaScript, Express.js, socket.io, HTML, CSS',
     description: (

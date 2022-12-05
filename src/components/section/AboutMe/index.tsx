@@ -29,14 +29,14 @@ function AboutMe() {
           <p>
             <b>Hello World! I&apos;m Lim.</b>
             <br />
-            <br /> For me, web development is to actualize our thoughts and
-            ideas in real life. The amazing part of being a frontend developer
-            is that I get to build interfaces where the thoughts and ideas can
-            be actually shared with users from us. I love to continue to learn
-            how to make the shared space better by perpetually improving my
-            development skills.
             <br />
-            <br /> <b>I just love what I do!</b>
+            What I really love about being a <b>frontend developer</b> is that I
+            get to build the interface where thoughts and ideas come to life,
+            and are shared with the end user. <br />
+            <br />
+            I&apos;m driven by the pursuit of writing ever-more effective,
+            reliable and clean code, so that I can develop better interfaces,
+            and provide great user experiences.
           </p>
         </div>
       </div>

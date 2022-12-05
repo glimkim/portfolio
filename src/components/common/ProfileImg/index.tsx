@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import profilePic from 'assets/images/profile_img.png';
+import profilePic from 'assets/images/profile_img.jpg';
 
 type ProfileImgType = 'square' | 'circle';
 

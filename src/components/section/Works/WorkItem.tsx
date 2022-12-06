@@ -113,11 +113,13 @@ const Item = styled.li`
         gap: 0.5rem;
         align-items: flex-end;
         margin-bottom: 0.5rem;
+        padding-right: 0.7rem;
         h6 {
           font-family: 'Poppins', sans-serif;
           font-weight: 900;
           font-size: 2rem;
           color: ${({ theme: { colors } }) => colors.title};
+          max-width: 280px;
         }
         p {
           font-size: 0.9rem;

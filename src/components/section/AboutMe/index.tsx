@@ -211,6 +211,16 @@ const SectionWrapper = styled.div`
       font-size: 1.15rem;
     }
   }
+
+  @media screen and (max-width: 767px) {
+    div.intro {
+      display: flex;
+      flex-direction: column;
+      p {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 export default AboutMe;

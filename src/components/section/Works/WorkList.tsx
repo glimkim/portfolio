@@ -27,14 +27,15 @@ const workList: ItemInfo[] = [
         title: 'LCP',
         date: '01. 2023 - Present',
         stacks: 'VueJS, TypeScript, SCSS, vitest, vue/test-utils, Pinia',
+        link: 'https://www.lcp.com/en',
         description: (
           <ul>
             <li>
-              Designed and implemented UX/UI elements, often taking on project management roles when collaborating with interdisciplinary teams to enhance user experience and usability.
-            </li>
-            <li>
               Developed multiple health analysis data dashboards, working with APIs for CRUD operations and often
               manipulating raw data (e.g., CSV files) for frontend visualization due to project requirements.
+            </li>
+            <li>
+              Designed and implemented UX/UI elements, often taking on project management roles when collaborating with interdisciplinary teams to enhance user experience and usability.
             </li>
             <li>Conducted testing using vitest and vue/test-utils to ensure code quality and reliability</li>
             <li>Focused on performance optimization and accessibility, consistently upholding high standards across all projects</li>

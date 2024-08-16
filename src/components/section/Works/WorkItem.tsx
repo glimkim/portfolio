@@ -69,7 +69,7 @@ function WorkItem({
               Visit {title}
             </Button>
           )}
-          {(!gitCodeDisabled || gitLink) && (
+          {(!gitCodeDisabled && gitLink) && (
             <Button
               theme="sub"
               className="gitBtn"

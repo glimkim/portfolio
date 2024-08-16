@@ -23,7 +23,7 @@ function SVG({ icon }: SVGProps) {
 const Img = styled.figure<{ icon: IconType }>`
   ${({ theme: { colors }, icon }) => {
     const iconsToColor: IconType[] = ['GitHub', 'Notion', 'LinkedIn', 'Mode'];
-    let styles = ``;
+    let styles = '';
     if (iconsToColor.includes(icon)) {
       styles += `svg {
           path {

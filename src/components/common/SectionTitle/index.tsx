@@ -65,7 +65,7 @@ const TitleWrapper = styled.div<{ letterLength: number; align: Align }>`
       ${upNdown(600, 0)}
     }
     ${({ letterLength }) => {
-      let styles = ``;
+      let styles = '';
       for (let i = 1; i <= letterLength; i++) {
         styles += `
         h3 span:nth-of-type(${i}){

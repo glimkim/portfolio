@@ -30,13 +30,9 @@ function AboutMe() {
             <b>Hello World! I&apos;m Lim.</b>
             <br />
             <br />
-            What I really love about being a <b>frontend developer</b> is that I
-            get to build the interface where thoughts and ideas come to life,
-            and are shared with the end user. <br />
+            As a Frontend Developer, I love bringing ideas to life through engaging user interfaces. With experience in VueJS, ReactJS, and TypeScript, I strive to write clean, reliable code that enhances user experiences.<br />
             <br />
-            I&apos;m driven by the pursuit of writing ever-more effective,
-            reliable and clean code, so that I can develop better interfaces,
-            and provide great user experiences.
+            Currently, at LCP, I focus on improving user experiences through complex data visualisations and modern web technologies. I thrive in collaborative environments, tackling challenging problems and transforming concepts into intuitive, user-friendly applications.
           </p>
         </div>
       </div>
@@ -44,81 +40,77 @@ function AboutMe() {
         <h5>My Strengths</h5>
         <StrengthBox>
           <div>
-            <h6>familiar with</h6>
+            <h6>Proficient</h6>
             <ul>
               <li>
-                <img src={Proficient01} alt="js_icon" />
                 JavaScript
               </li>
               <li>
-                <img src={Proficient02} alt="ts_icon" />
                 TypeScript
               </li>
               <li>
-                <img src={Proficient03} alt="react_icon" />
-                React JS
+                VueJS
               </li>
               <li>
-                <img src={Proficient04} alt="html_icon" />
+                ReactJS
+              </li>
+              <li>
                 HTML
               </li>
               <li>
-                <img src={Proficient05} alt="css_icon" />
                 CSS
               </li>
               <li>
-                <img src={Proficient06} alt="scss_icon" />
                 SCSS
               </li>
             </ul>
           </div>
           <div>
-            <h6>experienced</h6>
+            <h6>Tried</h6>
             <ul>
               <li>
-                <img src={Tried01} alt="php_icon" />
-                PHP
+                Python
               </li>
               <li>
-                <img src={Tried02} alt="mysql_icon" />
-                MySQL
+                NextJS
               </li>
               <li>
-                <img src={Tried03} alt="nodejs_icon" />
                 NodeJS
               </li>
               <li>
-                <img src={Tried04} alt="firebase_icon" />
+                Azure Functions
+              </li>
+              <li>
+                MySQL
+              </li>
+              <li>
+                PHP
+              </li>
+              <li>
                 Firebase
               </li>
             </ul>
           </div>
           <div>
-            <h6>tools</h6>
+            <h6>Tools</h6>
             <ul>
               <li>
-                <img src={Tools01} alt="gitHub_icon" />
                 gitHub
               </li>
               <li>
-                <img src={Tools02} alt="zeplin_icon" />
-                Zeplin
-              </li>
-              <li>
-                <img src={Tools03} alt="figma_icon" />
-                Figma
-              </li>
-              <li>
-                <img src={Tools04} alt="xd_icon" />
                 Adobe XD
               </li>
               <li>
-                <img src={Tools05} alt="illustrator_icon" />
                 Adobe Illustrator
               </li>
               <li>
-                <img src={Tools06} alt="photoshop_icon" />
                 Adobe Photoshop
+              </li>
+              <li>
+                Zeplin
+              </li>
+              <li>
+                Figma
               </li>
             </ul>
           </div>

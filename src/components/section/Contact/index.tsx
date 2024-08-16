@@ -12,7 +12,7 @@ function Contact() {
         <ul>
           <li>
             Email <span className="bar" />{' '}
-            <a href="mailto:webmaster@example.com">ltbllim@gmail.com</a>
+            <a href="mailto:limkimdev@gmail.com">limkimdev@gmail.com</a>
           </li>
           <li>
             Mobile <span className="bar" />{' '}

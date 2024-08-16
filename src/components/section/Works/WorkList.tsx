@@ -8,13 +8,14 @@ import Bn05 from 'assets/images/item_bn_05.png';
 import Bn06 from 'assets/images/item_bn_06.png';
 import Bn07 from 'assets/images/item_bn_07.png';
 import Bn08 from 'assets/images/item_bn_08.png';
+import Bn09 from 'assets/images/item_bn_09.png';
 import WorkItem from './WorkItem';
 
 export interface ItemInfo {
   title: string;
   date: string;
-  link: string;
-  gitLink: string;
+  link?: string;
+  gitLink?: string;
   stacks: string;
   description: React.ReactNode;
   img: string;
@@ -22,10 +23,28 @@ export interface ItemInfo {
 }
 
 const workList: ItemInfo[] = [
+    {
+        title: 'LCP',
+        date: '01. 2023 - Present',
+        stacks: 'VueJS, TypeScript, SCSS, vitest, vue/test-utils, Pinia',
+        description: (
+          <ul>
+            <li>
+              Designed and implemented UX/UI elements, often taking on project management roles when collaborating with interdisciplinary teams to enhance user experience and usability.
+            </li>
+            <li>
+              Developed multiple health analysis data dashboards, working with APIs for CRUD operations and often
+              manipulating raw data (e.g., CSV files) for frontend visualization due to project requirements.
+            </li>
+            <li>Conducted testing using vitest and vue/test-utils to ensure code quality and reliability</li>
+            <li>Focused on performance optimization and accessibility, consistently upholding high standards across all projects</li>
+          </ul>
+        ),
+        img: Bn09,
+      },
   {
     title: 'Toons',
-    date: '01. 06. 2022 - 14. 10. 2022',
-    link: 'https://toons.jinwoo.space/',
+    date: '06. 2022 - 10. 2022',
     gitLink: 'https://github.com/glimkim/toons',
     stacks: 'ReactJS, TypeScript, react-query, Redux, styled-components',
     description: (
@@ -45,7 +64,7 @@ const workList: ItemInfo[] = [
   },
   {
     title: 'Toons Components',
-    date: '01. 06. 2022 - 24. 09. 2022',
+    date: '06. 2022 - 09. 2022',
     link: 'https://glimkim.github.io/toons-ui-components/?path=/story/toons-ui-intro--page',
     gitLink: 'https://github.com/glimkim/toons-ui-components',
     stacks: 'ReactJS, TypeScript, Storybook, styled-components, rollup',
@@ -62,7 +81,7 @@ const workList: ItemInfo[] = [
   },
   {
     title: 'StepPay',
-    date: '21. 06. 2021 - 30. 06. 2022',
+    date: '06. 2021 - 06. 2022',
     link: 'https://www.steppay.kr/',
     gitLink: '',
     stacks:
@@ -89,7 +108,7 @@ const workList: ItemInfo[] = [
   },
   {
     title: 'Lmitter',
-    date: '24. 04. 2021 - 15. 05. 2021',
+    date: '04. 2021 - 05. 2021',
     link: 'https://hellolimi.github.io/lmitter/#/',
     gitLink: 'https://github.com/glimkim/lmitter',
     stacks: 'ReactJS, Firebase, SCSS',
@@ -107,8 +126,7 @@ const workList: ItemInfo[] = [
   },
   {
     title: 'LimChat',
-    date: '28. 03. 2021 - 08. 04. 2021',
-    link: 'https://limchat.fly.dev/',
+    date: '03. 2021 - 04. 2021',
     gitLink: 'https://github.com/glimkim/limChat',
     stacks: 'Node.js, JavaScript, Express.js, socket.io, HTML, CSS',
     description: (
@@ -128,7 +146,7 @@ const workList: ItemInfo[] = [
   },
   {
     title: 'ASTELL & KERN',
-    date: '28. 02. 2021 - 08. 03. 2021',
+    date: '02. 2021 - 03. 2021',
     link: 'https://glimkim.github.io/AstellnKern_Renewal_Project/',
     gitLink: 'https://github.com/glimkim/AstellnKern_Renewal_Project',
     stacks: 'JavaScript, jQuery, HTML, CSS',
@@ -148,7 +166,7 @@ const workList: ItemInfo[] = [
   },
   {
     title: 'BookAnd',
-    date: '31. 12. 2020 - 15. 02. 2021',
+    date: '12. 2020 - 02. 2021',
     link: 'http://bookand.dothome.co.kr/',
     gitLink: 'https://github.com/glimkim/BookAnd_Rebranding_Project_PC',
     stacks: 'JavaScript, jQuery, HTML, CSS',
@@ -169,7 +187,7 @@ const workList: ItemInfo[] = [
   },
   {
     title: 'Baekmidang',
-    date: '24. 04. 2020 - 11. 05. 2020',
+    date: '04. 2020 - 05. 2020',
     link: 'https://glimkim.github.io/Baekmidang_Renewal_Project_PC/',
     gitLink: 'https://github.com/glimkim/Baekmidang_Renewal_Project_PC',
     stacks: 'JavaScript, jQuery, HTML, CSS',

@@ -17,8 +17,8 @@ function ProfileImg({ shape }: ProfileImgProps) {
 }
 
 const ImageFigure = styled.figure<{ shape: ProfileImgType }>`
-  width: 11rem;
-  height: 11rem;
+  width: 12rem;
+  height: 12rem;
   overflow: hidden;
   border-radius: ${({ shape }) => (shape === 'circle' ? '100%' : 0)};
   border: 1px solid ${({ theme: { colors } }) => colors.border};

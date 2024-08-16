@@ -26,7 +26,8 @@ function WorkItem({
   const ref = useRef<HTMLLIElement>(null);
   const [itemTop, setItemTop] = useState(0);
 
-  const onClickBtn = useCallback((_link: string) => {
+  const onClickBtn = useCallback((_link?: string) => {
+    if (!_link) return;
     window.open(_link);
   }, []);
 
@@ -63,10 +64,12 @@ function WorkItem({
           </div>
         </div>
         <div className="buttons">
-          <Button theme="sub" onClick={() => onClickBtn(link)}>
-            Visit {title}
-          </Button>
-          {!gitCodeDisabled && (
+          {link && (
+            <Button theme="sub" onClick={() => onClickBtn(link)}>
+              Visit {title}
+            </Button>
+          )}
+          {(!gitCodeDisabled || gitLink) && (
             <Button
               theme="sub"
               className="gitBtn"

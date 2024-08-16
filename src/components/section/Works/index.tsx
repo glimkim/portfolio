@@ -31,6 +31,11 @@ function Works() {
       {!isMobileSize && (
         <ul className="navi">
           <li>
+            <button type="button" onClick={onClickBtn} data-name="LCP">
+              LCP
+            </button>
+          </li>
+          <li>
             <button type="button" onClick={onClickBtn} data-name="Toons">
               Toons
             </button>

@@ -56,6 +56,5 @@ export const upNdown = (transition: number, delay = 0) => {
     animation-delay: ${`${delay}ms`};
 
     transform-origin: center;
-    // transform: translateY(-300px);
   `;
 };

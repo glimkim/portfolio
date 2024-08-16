@@ -34,7 +34,8 @@ const StyledButton = styled.button<{ buttonTheme: ButtonTheme }>`
   transition: 0.3s;
   &:hover {
     background-color: ${({ theme: { colors } }) => colors.button.hoverBg};
-    box-shadow: 10px 6px ${({ theme: { colors } }) => colors.button.shadow};
+    box-shadow: 0px 0px ${({ theme: { colors } }) => colors.button.shadow};
+    transform: translate(6px, 5px);
   }
   white-space: nowrap;
 `;

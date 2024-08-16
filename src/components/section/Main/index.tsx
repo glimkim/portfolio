@@ -12,7 +12,7 @@ function Main() {
   const onClickDownloadCV = useCallback(() => {
     const link = document.createElement('a');
     link.href = 'assets/Lim_Kim_CV.pdf';
-    link.setAttribute('download', `Lim_Kim_CV.pdf`);
+    link.setAttribute('download', 'Lim_Kim_CV.pdf');
     document.body.appendChild(link);
     link.click();
     link.parentNode?.removeChild(link);
@@ -30,7 +30,7 @@ function Main() {
     if (toMatch.some((toMatchItem) => navigator.userAgent.match(toMatchItem))) {
       window.location.href = 'tel:447784990516';
     } else {
-      window.location.href = 'mailto:mail@example.org';
+      window.location.href = 'mailto:limkimdev@gmail.com';
     }
   }, []);
 

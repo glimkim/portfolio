@@ -8,9 +8,7 @@
     "airbnb",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/prettier"
+    "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -24,8 +22,7 @@
     "react",
     "@typescript-eslint",
     "import",
-    "react-hooks",
-    "prettier"
+    "react-hooks"
   ],
   "rules": {
     "require-jsdoc": 0,
@@ -49,15 +46,17 @@
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-console": "off",
     "no-nested-ternary": "off",
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
-    ],
     "react/jsx-props-no-spreading": "off",
     "no-unused-expressions": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "arrow-body-style": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "operator-linebreak": "off",
+    "object-curly-newline": "off",
+    "no-confusing-arrow": "off",
+    "indent": "off",
+    "implicit-arrow-linebreak": "off",
+    "max-len": "off"
   },
   "settings": {
     "import/resolver": {

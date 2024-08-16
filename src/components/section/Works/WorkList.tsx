@@ -32,7 +32,7 @@ const workList: ItemInfo[] = [
           <ul>
             <li>
               Developed multiple health analysis data dashboards, working with APIs for CRUD operations and often
-              manipulating raw data (e.g., CSV files) for frontend visualization due to project requirements.
+              manipulating raw data (e.g., CSV files) for frontend visualisation due to project requirements.
             </li>
             <li>
               Designed and implemented UX/UI elements, often taking on project management roles when collaborating with interdisciplinary teams to enhance user experience and usability.

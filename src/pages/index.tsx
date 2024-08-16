@@ -25,7 +25,7 @@ function Home() {
     active: () => {
       setTimeout(() => {
         setFontLoaded(true);
-      }, 1000);
+      }, 800);
     },
   });
 

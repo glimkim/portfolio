@@ -175,7 +175,7 @@ const Item = styled.li`
       li {
         position: relative;
         padding-left: 1rem;
-        padding: 0.5rem 0 0.5rem 1rem;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
         line-height: 150%;
         &::after {
           position: absolute;

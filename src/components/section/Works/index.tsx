@@ -26,65 +26,65 @@ function Works() {
   }, []);
 
   return (
-    <SectionWrapper id='works'>
-      <SectionTitle title='Works' />
+    <SectionWrapper id="works">
+      <SectionTitle title="Works" />
       {!isMobileSize && (
-        <ul className='navi'>
+        <ul className="navi">
           <li>
-            <button type='button' onClick={onClickBtn} data-name='nPlan'>
+            <button type="button" onClick={onClickBtn} data-name="nPlan">
               1. nPlan
             </button>
           </li>
           <li>
-            <button type='button' onClick={onClickBtn} data-name='LCP'>
+            <button type="button" onClick={onClickBtn} data-name="LCP">
               2. LCP
             </button>
           </li>
           <li>
-            <button type='button' onClick={onClickBtn} data-name='Toons'>
+            <button type="button" onClick={onClickBtn} data-name="Toons">
               3. Toons
             </button>
           </li>
           <li>
             <button
-              type='button'
+              type="button"
               onClick={onClickBtn}
-              data-name='Toons Components'
+              data-name="Toons Components"
             >
               4. Toons Components
             </button>
           </li>
           <li>
-            <button type='button' onClick={onClickBtn} data-name='StepPay'>
+            <button type="button" onClick={onClickBtn} data-name="StepPay">
               5. StepPay
             </button>
           </li>
           <li>
-            <button type='button' onClick={onClickBtn} data-name='Lmitter'>
+            <button type="button" onClick={onClickBtn} data-name="Lmitter">
               6. Lmitter
             </button>
           </li>
           <li>
-            <button type='button' onClick={onClickBtn} data-name='LimChat'>
+            <button type="button" onClick={onClickBtn} data-name="LimChat">
               7. LimChat
             </button>
           </li>
           <li>
             <button
-              type='button'
+              type="button"
               onClick={onClickBtn}
-              data-name='ASTELL & KERN'
+              data-name="ASTELL & KERN"
             >
               8. ASTELL & KERN
             </button>
           </li>
           <li>
-            <button type='button' onClick={onClickBtn} data-name='BookAnd'>
+            <button type="button" onClick={onClickBtn} data-name="BookAnd">
               9. BookAnd
             </button>
           </li>
           <li>
-            <button type='button' onClick={onClickBtn} data-name='Baekmidang'>
+            <button type="button" onClick={onClickBtn} data-name="Baekmidang">
               10. Baekmidang
             </button>
           </li>

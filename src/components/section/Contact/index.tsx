@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import ProfileImg from 'components/common/ProfileImg';
 import SectionTitle from 'components/common/SectionTitle';

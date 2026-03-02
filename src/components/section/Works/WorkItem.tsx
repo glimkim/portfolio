@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import Button from 'components/common/Button';
 import SVG from 'components/common/SVG';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
 import _ from 'lodash';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ItemInfo } from './WorkList';
 
 interface ItemProps {
@@ -69,7 +69,7 @@ function WorkItem({
               Visit {title}
             </Button>
           )}
-          {(!gitCodeDisabled && gitLink) && (
+          {!gitCodeDisabled && gitLink && (
             <Button
               theme="sub"
               className="gitBtn"

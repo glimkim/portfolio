@@ -5,11 +5,11 @@ import SectionTitle from 'components/common/SectionTitle';
 
 function AboutMe() {
   return (
-    <SectionWrapper id='aboutMe'>
-      <SectionTitle title='About Me' />
-      <div className='contents'>
-        <div className='intro'>
-          <ProfileImg shape='square' />
+    <SectionWrapper id="aboutMe">
+      <SectionTitle title="About Me" />
+      <div className="contents">
+        <div className="intro">
+          <ProfileImg shape="square" />
           <p>
             <b>Hello, I&apos;m Lim</b> - A frontend engineer who enjoys turning
             complex product logic into intuitive user experiences.
@@ -29,7 +29,7 @@ function AboutMe() {
           </p>
         </div>
       </div>
-      <div className='strengths'>
+      <div className="strengths">
         <h5>Core Strengths</h5>
         <StrengthBox>
           <div>

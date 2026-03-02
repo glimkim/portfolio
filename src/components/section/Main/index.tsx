@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Button from 'components/common/Button';
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { appearFromBottom, appearFromLeft, fadeIn } from 'styles/animation';
 import { headerHeight } from 'styles/global';
 

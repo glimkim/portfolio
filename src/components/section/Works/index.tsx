@@ -26,61 +26,66 @@ function Works() {
   }, []);
 
   return (
-    <SectionWrapper id="works">
-      <SectionTitle title="Works" />
+    <SectionWrapper id='works'>
+      <SectionTitle title='Works' />
       {!isMobileSize && (
-        <ul className="navi">
+        <ul className='navi'>
           <li>
-            <button type="button" onClick={onClickBtn} data-name="LCP">
-              LCP
+            <button type='button' onClick={onClickBtn} data-name='nPlan'>
+              1. nPlan
             </button>
           </li>
           <li>
-            <button type="button" onClick={onClickBtn} data-name="Toons">
-              Toons
+            <button type='button' onClick={onClickBtn} data-name='LCP'>
+              2. LCP
             </button>
           </li>
           <li>
-            <button
-              type="button"
-              onClick={onClickBtn}
-              data-name="Toons Components"
-            >
-              Toons Components
-            </button>
-          </li>
-          <li>
-            <button type="button" onClick={onClickBtn} data-name="StepPay">
-              StepPay
-            </button>
-          </li>
-          <li>
-            <button type="button" onClick={onClickBtn} data-name="Lmitter">
-              Lmitter
-            </button>
-          </li>
-          <li>
-            <button type="button" onClick={onClickBtn} data-name="LimChat">
-              LimChat
+            <button type='button' onClick={onClickBtn} data-name='Toons'>
+              3. Toons
             </button>
           </li>
           <li>
             <button
-              type="button"
+              type='button'
               onClick={onClickBtn}
-              data-name="ASTELL & KERN"
+              data-name='Toons Components'
             >
-              ASTELL & KERN
+              4. Toons Components
             </button>
           </li>
           <li>
-            <button type="button" onClick={onClickBtn} data-name="BookAnd">
-              BookAnd
+            <button type='button' onClick={onClickBtn} data-name='StepPay'>
+              5. StepPay
             </button>
           </li>
           <li>
-            <button type="button" onClick={onClickBtn} data-name="Baekmidang">
-              Baekmidang
+            <button type='button' onClick={onClickBtn} data-name='Lmitter'>
+              6. Lmitter
+            </button>
+          </li>
+          <li>
+            <button type='button' onClick={onClickBtn} data-name='LimChat'>
+              7. LimChat
+            </button>
+          </li>
+          <li>
+            <button
+              type='button'
+              onClick={onClickBtn}
+              data-name='ASTELL & KERN'
+            >
+              8. ASTELL & KERN
+            </button>
+          </li>
+          <li>
+            <button type='button' onClick={onClickBtn} data-name='BookAnd'>
+              9. BookAnd
+            </button>
+          </li>
+          <li>
+            <button type='button' onClick={onClickBtn} data-name='Baekmidang'>
+              10. Baekmidang
             </button>
           </li>
         </ul>
@@ -98,13 +103,12 @@ const SectionWrapper = styled.div`
         border-bottom: ${border};
         padding: 1rem 0;
         margin-bottom: 2.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         li {
           display: flex;
           align-items: center;
           gap: 0.25rem;
-          &::before {
-            content: '•';
-          }
           button {
             display: block;
             padding: 0.25rem 0;

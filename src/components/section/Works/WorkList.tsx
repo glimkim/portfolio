@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import Bn01 from 'assets/images/item_bn_01.png';
 import Bn02 from 'assets/images/item_bn_02.png';
@@ -9,6 +8,8 @@ import Bn06 from 'assets/images/item_bn_06.png';
 import Bn07 from 'assets/images/item_bn_07.png';
 import Bn08 from 'assets/images/item_bn_08.png';
 import Bn09 from 'assets/images/item_bn_09.png';
+import Bn10 from 'assets/images/item_bn_10.png';
+import React from 'react';
 import WorkItem from './WorkItem';
 
 export interface ItemInfo {
@@ -23,26 +24,58 @@ export interface ItemInfo {
 }
 
 const workList: ItemInfo[] = [
-    {
-        title: 'LCP',
-        date: '01. 2023 - Present',
-        stacks: 'VueJS, TypeScript, SCSS, vitest, vue/test-utils, Pinia',
-        link: 'https://www.lcp.com/en',
-        description: (
-          <ul>
-            <li>
-              Developed multiple health analysis data dashboards, working with APIs for CRUD operations and often
-              manipulating raw data (e.g., CSV files) for frontend visualisation due to project requirements.
-            </li>
-            <li>
-              Designed and implemented UX/UI elements, often taking on project management roles when collaborating with interdisciplinary teams to enhance user experience and usability.
-            </li>
-            <li>Conducted testing using vitest and vue/test-utils to ensure code quality and reliability</li>
-            <li>Focused on performance optimization and accessibility, consistently upholding high standards across all projects</li>
-          </ul>
-        ),
-        img: Bn09,
-      },
+  {
+    title: 'nPlan',
+    date: '01. 2025 - Present',
+    stacks: 'React, TypeScript, GraphQL, Tailwind, Zustand',
+    link: 'https://www.nplan.io',
+    description: (
+      <ul>
+        <li>
+          Building data-heavy SaaS interfaces for schedule analytics workflows
+        </li>
+        <li>
+          Refining ambiguous product requirements into structured, maintainable
+          UI architecture
+        </li>
+        <li>
+          Collaborating cross-functionally to align UI architecture with backend
+          processing constraints
+        </li>
+        <li>Designing frontend logic around asynchronous pipeline states</li>
+      </ul>
+    ),
+    img: Bn10,
+  },
+  {
+    title: 'LCP',
+    date: '01. 2023 - 12.2024',
+    stacks: 'VueJS, TypeScript, SCSS, vitest, vue/test-utils, Pinia',
+    link: 'https://www.lcp.com/en',
+    description: (
+      <ul>
+        <li>
+          Developed multiple health analysis data dashboards, working with APIs
+          for CRUD operations and often manipulating raw data (e.g., CSV files)
+          for frontend visualisation due to project requirements.
+        </li>
+        <li>
+          Designed and implemented UX/UI elements, often taking on project
+          management roles when collaborating with interdisciplinary teams to
+          enhance user experience and usability.
+        </li>
+        <li>
+          Conducted testing using vitest and vue/test-utils to ensure code
+          quality and reliability
+        </li>
+        <li>
+          Focused on performance optimization and accessibility, consistently
+          upholding high standards across all projects
+        </li>
+      </ul>
+    ),
+    img: Bn09,
+  },
   {
     title: 'Toons',
     date: '06. 2022 - 10. 2022',

@@ -2,116 +2,60 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import ProfileImg from 'components/common/ProfileImg';
 import SectionTitle from 'components/common/SectionTitle';
-import Proficient01 from 'assets/images/skill_icon_proficient_01.png';
-import Proficient02 from 'assets/images/skill_icon_proficient_02.png';
-import Proficient03 from 'assets/images/skill_icon_proficient_03.png';
-import Proficient04 from 'assets/images/skill_icon_proficient_04.png';
-import Proficient05 from 'assets/images/skill_icon_proficient_05.png';
-import Proficient06 from 'assets/images/skill_icon_proficient_06.png';
-import Tried01 from 'assets/images/skill_icon_tried_01.png';
-import Tried02 from 'assets/images/skill_icon_tried_02.png';
-import Tried03 from 'assets/images/skill_icon_tried_03.png';
-import Tried04 from 'assets/images/skill_icon_tried_04.png';
-import Tools01 from 'assets/images/skill_icon_tools_01.png';
-import Tools02 from 'assets/images/skill_icon_tools_02.png';
-import Tools03 from 'assets/images/skill_icon_tools_03.png';
-import Tools04 from 'assets/images/skill_icon_tools_04.png';
-import Tools05 from 'assets/images/skill_icon_tools_05.png';
-import Tools06 from 'assets/images/skill_icon_tools_06.png';
 
 function AboutMe() {
   return (
-    <SectionWrapper id="aboutMe">
-      <SectionTitle title="About Me" />
-      <div className="contents">
-        <div className="intro">
-          <ProfileImg shape="square" />
+    <SectionWrapper id='aboutMe'>
+      <SectionTitle title='About Me' />
+      <div className='contents'>
+        <div className='intro'>
+          <ProfileImg shape='square' />
           <p>
-            <b>Hello World! I&apos;m Lim.</b>
+            <b>Hello, I&apos;m Lim</b> - A frontend engineer who enjoys turning
+            complex product logic into intuitive user experiences.
             <br />
             <br />
-            As a Frontend Developer, I love bringing ideas to life through engaging user interfaces. With experience in VueJS, ReactJS, and TypeScript, I strive to write clean, reliable code that enhances user experiences.<br />
+            I work with React and TypeScript to build scalable, maintainable
+            frontend systems, particularly in data-heavy environments. I&apos;m
+            comfortable navigating ambiguity, breaking down messy requirements,
+            aligning with backend constraints, and shaping clear UI
+            architecture. <br /> <br />
+            I care about clean contracts, long-term maintainability, and
+            building things properly rather than quickly patching them. Good
+            frontend engineering, to me, is about clarity — in code, in
+            communication, and in product thinking.
             <br />
-            Currently, at LCP, I focus on improving user experiences through complex data visualisations and modern web technologies. I thrive in collaborative environments, tackling challenging problems and transforming concepts into intuitive, user-friendly applications.
+            <br />
           </p>
         </div>
       </div>
-      <div className="strengths">
-        <h5>My Strengths</h5>
+      <div className='strengths'>
+        <h5>Core Strengths</h5>
         <StrengthBox>
           <div>
-            <h6>Proficient</h6>
+            <h6>Data-Driven Frontend</h6>
             <ul>
               <li>
-                JavaScript
+                Building complex, data-heavy interfaces with React & TypeScript
               </li>
-              <li>
-                TypeScript
-              </li>
-              <li>
-                VueJS
-              </li>
-              <li>
-                ReactJS
-              </li>
-              <li>
-                HTML
-              </li>
-              <li>
-                CSS
-              </li>
-              <li>
-                SCSS
-              </li>
+              <li>Type-safe API integration (GraphQL / REST)</li>
+              <li>Scalable component architecture</li>
             </ul>
           </div>
           <div>
-            <h6>Tried</h6>
+            <h6>Product-Minded Engineering</h6>
             <ul>
-              <li>
-                Python
-              </li>
-              <li>
-                NextJS
-              </li>
-              <li>
-                NodeJS
-              </li>
-              <li>
-                Azure Functions
-              </li>
-              <li>
-                MySQL
-              </li>
-              <li>
-                PHP
-              </li>
-              <li>
-                Firebase
-              </li>
+              <li>Turning ambiguous requirements into structured UI systems</li>
+              <li>Aligning frontend logic with backend constraints</li>
+              <li>Designing for long-term maintainability</li>
             </ul>
           </div>
           <div>
-            <h6>Tools</h6>
+            <h6>Design-Aware Development</h6>
             <ul>
-              <li>
-                gitHub
-              </li>
-              <li>
-                Adobe XD
-              </li>
-              <li>
-                Adobe Illustrator
-              </li>
-              <li>
-                Adobe Photoshop
-              </li>
-              <li>
-                Zeplin
-              </li>
-              <li>
-                Figma
-              </li>
+              <li>Strong visual hierarchy & layout systems</li>
+              <li>Design system implementation</li>
+              <li>UX decisions grounded in clarity and usability</li>
             </ul>
           </div>
         </StrengthBox>
@@ -145,18 +89,19 @@ const StrengthBox = styled.ul`
   }};
 
   li {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 0.7rem;
-    padding: 0.5rem 0;
-    font-weight: bold;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    line-height: 150%;
     transition: 0.6s;
     transform-origin: left center;
-    &:first-of-type {
-      padding-top: 1rem;
-    }
-    &:last-of-type {
-      padding-bottom: 0;
+    &::after {
+      position: absolute;
+      left: 0;
+      top: 0.4rem;
+      content: '»';
     }
     &:hover {
       transform: scale(1.1, 1.1);
